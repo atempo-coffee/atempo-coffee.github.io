@@ -28,30 +28,19 @@
         }
 
         /* --- 頁首大圖 --- */
-        /* --- 頁首區塊 --- */
         .page-header {
             position: relative;
             height: 60vh;
             min-height: 400px;
             background-color: #333; /* Fallback color */
-            background-image: url('https://raw.githubusercontent.com/atempo-coffee/atempo-coffee.github.io/refs/heads/main/icon/atempo-coffee.png');
+            background-image: url('https://images.unsplash.com/photo-1511920183353-3c7c95a5742c?q=80&w=1887&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            background-color: #2a2a2a; /* 深灰色背景 */
-            color: white;
-            padding: 40px 20px;
-        }
-
-        .header-container {
             display: flex;
-            flex-wrap: wrap; /* 在小螢幕上換行 */
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 30px;
         }
 
         .page-header::before {
@@ -62,22 +51,14 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5); /* 加上一層半透明黑色濾鏡以增強文字可讀性 */
-        .header-logo {
-            width: 150px; /* 調整 Logo 大小 */
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px; /* 可選：給圖片加個小圓角 */
         }
 
         .header-content {
             position: relative; /* 確保內容在濾鏡之上 */
             padding: 20px;
-        .header-text {
-            text-align: left; /* 大螢幕時文字靠左 */
         }
 
         .header-content h1 {
-        .header-text h1 {
             font-size: 3.5em;
             margin-bottom: 0.2em;
             font-weight: 700;
@@ -85,19 +66,8 @@
         }
 
         .header-content p {
-        .header-text p {
             font-size: 1.2em;
             font-weight: 300;
-        }
-
-        /* 手機版響應式調整 */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column; /* 垂直排列 */
-            }
-            .header-text {
-                text-align: center; /* 手機上文字置中 */
-            }
         }
 
         /* --- 主要內容容器 (flex container) --- */
@@ -181,12 +151,6 @@
         <div class="header-content">
             <h1>ATEMPO Coffee</h1>
             <p>品味生活，從一杯好咖啡開始</p>
-        <div class="header-container">
-            <img src="https://raw.githubusercontent.com/atempo-coffee/atempo-coffee.github.io/refs/heads/main/icon/atempo-coffee.png" alt="ATEMPO Coffee Logo" class="header-logo">
-            <div class="header-text">
-                <h1>ATEMPO Coffee</h1>
-                <p>品味生活，從一杯好咖啡開始</p>
-            </div>
         </div>
     </header>
 
