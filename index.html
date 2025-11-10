@@ -73,8 +73,61 @@
         /* --- 主要內容區塊 --- */
         .main-content {
             max-width: 800px;
+        /* --- 主要內容容器 (flex container) --- */
+        .page-content-wrapper {
+            display: flex;
+            flex-wrap: wrap; /* 在小螢幕上換行 */
+            max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
+            gap: 40px; /* 側邊欄和主內容之間的間距 */
+        }
+
+        /* --- 左側邊欄 (個人檔案) --- */
+        .sidebar {
+            flex: 1;
+            min-width: 240px; /* 側邊欄最小寬度 */
+        }
+
+        .author-profile {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* 圓形圖片 */
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .author-profile h3 {
+            margin-bottom: 5px;
+            font-size: 1.4em;
+        }
+
+        .author-profile p {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .author-social a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.5em; /* 放大圖示文字 */
+            color: #555;
+        }
+
+        /* --- 右側主要文章區塊 --- */
+        .main-content {
+            flex: 3; /* 主內容區塊佔用更多空間 */
         }
 
         .article-header h2 {
@@ -109,6 +162,17 @@
             <div class="article-header">
                 <h2>關於 ATEMPO Coffee</h2>
                 <p class="article-meta">發布日期：2024年5月21日</p>
+    <div class="page-content-wrapper">
+        <aside class="sidebar">
+            <div class="author-profile">
+                <img src="https://via.placeholder.com/150" alt="個人頭像" class="author-avatar">
+                <h3>Lance Psalter</h3>
+                <p>咖啡愛好者，探索生活中的美好片刻。歡迎與我交流！</p>
+                <div class="author-social">
+                    <!-- 這裡使用文字作為圖示，您可以換成 <img> 或 SVG 圖示 -->
+                    <a href="#" title="Facebook">FB</a>
+                    <a href="#" title="Line">LN</a>
+                </div>
             </div>
             <div class="article-body">
                 <p>歡迎來到 ATEMPO Coffee 的世界。在這裡，我們相信每一杯咖啡都承載著一個故事，一段時光。我們的使命是為您尋找來自世界各地的精品咖啡豆，透過精準的烘焙和沖煮，釋放其最純粹、最迷人的風味。</p>
@@ -118,6 +182,22 @@
             </div>
         </article>
     </main>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <div class="article-header">
+                    <h2>關於 ATEMPO Coffee</h2>
+                    <p class="article-meta">發布日期：2024年5月21日</p>
+                </div>
+                <div class="article-body">
+                    <p>歡迎來到 ATEMPO Coffee 的世界。在這裡，我們相信每一杯咖啡都承載著一個故事，一段時光。我們的使命是為您尋找來自世界各地的精品咖啡豆，透過精準的烘焙和沖煮，釋放其最純粹、最迷人的風味。</p>
+                    <p>「Atempo」在音樂術語中意為「恢復原速」。我們希望 ATEMPO Coffee 能成為您繁忙生活中的一個休止符，讓您在此放慢腳步，回到屬於自己的節奏，靜靜享受一杯咖啡所帶來的純粹喜悅。</p>
+                    <p>無論您是資深的咖啡愛好者，還是剛開始探索這個奇妙世界的新朋友，我們都誠摯地邀請您加入我們的旅程，一同品味咖啡的美好。</p>
+                </div>
+            </article>
+        </main>
+    </div>
 
 </body>
 </html>
