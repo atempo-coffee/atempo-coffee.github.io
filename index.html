@@ -58,25 +58,22 @@
       padding: 20px;
     }
     
-    /* --- (新增) 頂端標題容器，用於排列圖片與文字 --- */
     .header-title-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0.2em; /* 與原h1的margin-bottom相同 */
+      margin-bottom: 0.2em;
     }
     
-    /* --- (新增) 頂端圖示樣式 --- */
     .header-icon {
-      height: 10em; /* 讓圖片高度能隨著h1字體大小縮放 */
-      margin-right: 0.4em; /* 圖片與文字的間距 */
-      /* 讓圖片陰影與文字陰影風格一致 */
+      height: 1.2em;
+      margin-right: 0.4em;
       filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.7));
     }
 
     .header-content h1 {
       font-size: 3.5em;
-      margin-bottom: 0; /* 將 margin-bottom 移至外層容器 */
+      margin-bottom: 0;
       margin-top: 0;
       font-weight: 700;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
@@ -138,6 +135,30 @@
       font-size: 1.5em; /* 放大圖示文字 */
       color: #555;
     }
+    
+    /* --- (新增) 側邊欄導覽連結 --- */
+    .sidebar-nav {
+      margin-top: 25px; /* 與上方社群圖示的間距 */
+      border-top: 1px solid #eee; /* 分隔線 */
+      padding-top: 20px;
+    }
+
+    .sidebar-nav a {
+      display: block; /* 讓整個區域都可點擊 */
+      padding: 10px 15px;
+      background-color: #f8f8f8;
+      border-radius: 5px;
+      color: #333;
+      font-weight: 500;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .sidebar-nav a:hover {
+      background-color: #0067c5; /* 沿用主色調 */
+      color: #fff;
+      text-decoration: none; /* 懸停時取消底線 */
+    }
+
 
     /* --- 右側主要文章區塊 --- */
     .main-content {
@@ -160,14 +181,40 @@
       margin-bottom: 1.5em;
       font-size: 1.1em;
     }
+
+    /* --- 圖片庫 --- */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 桌面版：三欄式 */
+      gap: 20px; /* 圖片間距 */
+      margin-top: 1em;
+      margin-bottom: 2em;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px; /* 給定一個固定高度 */
+      object-fit: cover; /* 確保圖片填滿容器且不變形 */
+      border-radius: 8px; /* 圓角 */
+      border: 1px solid #eee;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
     
-    /* --- (新增) 響應式設計：針對手機等小螢幕裝置 --- */
+    .gallery-item img:hover {
+        transform: scale(1.05); /* 放大效果 */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    /* --- 響應式設計：針對手機等小螢幕裝置 --- */
     @media (max-width: 768px) {
       .header-content h1 {
         font-size: 2.5em; /* 縮小標題，圖片會跟著縮小 */
       }
       .page-content-wrapper {
         flex-direction: column; /* 讓側邊欄和主內容垂直排列 */
+      }
+      .image-gallery {
+          grid-template-columns: 1fr; /* 手機版：單欄式 */
       }
     }
   </style>
@@ -176,10 +223,8 @@
 
   <header class="page-header">
     <div class="header-content">
-      <!-- (修改) 新增容器來放置圖示與標題 -->
       <div class="header-title-container">
-        <!-- (修改) 新增圖示 -->
-        <img src="" alt="ATEMPO Coffee Logo" class="header-icon">
+        <!--img src="" alt="ATEMPO Coffee Logo" class="header-icon"-->
         <h1>ATEMPO Coffee</h1>
       </div>
       <p>品味生活，從一杯好咖啡開始</p>
@@ -193,10 +238,15 @@
         <h3>ATEMPO Coffee</h3>
         <p>咖啡愛好者，探索生活中的美好片刻。歡迎與我交流！</p>
         <div class="author-social">
-          <!-- 這裡使用文字作為圖示，您可以換成 <img> 或 SVG 圖示 -->
           <a href="#" title="Facebook">FB</a>
           <a href="#" title="Line">LN</a>
         </div>
+        
+        <!-- (修改) 新增側邊欄導覽區塊 -->
+        <div class="sidebar-nav">
+          <a href="product.html">咖啡熟豆</a>
+        </div>
+        
       </div>
     </aside>
 
@@ -212,6 +262,24 @@
           <p>無論您是資深的咖啡愛好者，還是剛開始探索這個奇妙世界的新朋友，我們都誠摯地邀請您加入我們的旅程，一同品味咖啡的美好。</p>
         </div>
       </article>
+
+      <div class="article-header" style="margin-top: 2em;">
+        <h2>圖片集</h2>
+      </div>
+      <div class="image-gallery">
+        <div class="gallery-item">
+          <!-- 請將 src 替換為 "a.png" -->
+          <img src="https://static.wixstatic.com/media/f9c9f6_c516b6abda714c94a43815569bb9484a~mv2.png" alt="作品集圖片一">
+        </div>
+        <div class="gallery-item">
+          <!-- 請將 src 替換為 "b.png" -->
+          <img src="https://via.placeholder.com/400x300/ddd/888?text=b.png" alt="作品集圖片二">
+        </div>
+        <div class="gallery-item">
+          <!-- 請將 src 替換為 "c.png" -->
+          <img src="https://via.placeholder.com/400x300/eee/888?text=c.png" alt="作品集圖片三">
+        </div>
+      </div>
     </main>
   </div>
 
