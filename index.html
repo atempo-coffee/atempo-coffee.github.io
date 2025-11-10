@@ -1,187 +1,219 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於 ATEMPO Coffee</title>
-    <style>
-        /* --- 基本重設與字體 --- */
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fdfdfd;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於 ATEMPO Coffee</title>
+  <style>
+    /* --- 基本重設與字體 --- */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fdfdfd;
+    }
 
-        h1, h2, h3, p {
-            margin-top: 0;
-        }
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
 
-        a {
-            color: #0067c5;
-            text-decoration: none;
-        }
+    a {
+      color: #0067c5;
+      text-decoration: none;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        /* --- 頁首大圖 --- */
-        .page-header {
-            position: relative;
-            height: 60vh;
-            min-height: 400px;
-            background-color: #333; /* Fallback color */
-            background-image: url('https://images.unsplash.com/photo-1511920183353-3c7c95a5742c?q=80&w=1887&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
+    /* --- 頁首大圖 --- */
+    .page-header {
+      position: relative;
+      height: 60vh;
+      min-height: 400px;
+      background-color: #333; /* Fallback color */
+      background-image: url('https://images.unsplash.com/photo-1511920183353-3c7c95a5742c?q=80&w=1887&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
 
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* 加上一層半透明黑色濾鏡以增強文字可讀性 */
-        }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* 加上一層半透明黑色濾鏡以增強文字可讀性 */
+    }
 
-        .header-content {
-            position: relative; /* 確保內容在濾鏡之上 */
-            padding: 20px;
-        }
+    .header-content {
+      position: relative; /* 確保內容在濾鏡之上 */
+      padding: 20px;
+    }
+    
+    /* --- (新增) 頂端標題容器，用於排列圖片與文字 --- */
+    .header-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.2em; /* 與原h1的margin-bottom相同 */
+    }
+    
+    /* --- (新增) 頂端圖示樣式 --- */
+    .header-icon {
+      height: 3.5em; /* 讓圖片高度能隨著h1字體大小縮放 */
+      margin-right: 0.4em; /* 圖片與文字的間距 */
+      /* 讓圖片陰影與文字陰影風格一致 */
+      filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.7));
+    }
 
-        .header-content h1 {
-            font-size: 3.5em;
-            margin-bottom: 0.2em;
-            font-weight: 700;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
+    .header-content h1 {
+      font-size: 3.5em;
+      margin-bottom: 0; /* 將 margin-bottom 移至外層容器 */
+      margin-top: 0;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
 
-        .header-content p {
-            font-size: 1.2em;
-            font-weight: 300;
-        }
+    .header-content p {
+      font-size: 1.2em;
+      font-weight: 300;
+    }
 
-        /* --- 主要內容容器 (flex container) --- */
-        .page-content-wrapper {
-            display: flex;
-            flex-wrap: wrap; /* 在小螢幕上換行 */
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            gap: 40px; /* 側邊欄和主內容之間的間距 */
-        }
+    /* --- 主要內容容器 (flex container) --- */
+    .page-content-wrapper {
+      display: flex;
+      flex-wrap: wrap; /* 在小螢幕上換行 */
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 40px; /* 側邊欄和主內容之間的間距 */
+    }
 
-        /* --- 左側邊欄 (個人檔案) --- */
-        .sidebar {
-            flex: 1;
-            min-width: 240px; /* 側邊欄最小寬度 */
-        }
+    /* --- 左側邊欄 (個人檔案) --- */
+    .sidebar {
+      flex: 1;
+      min-width: 240px; /* 側邊欄最小寬度 */
+    }
 
-        .author-profile {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-        }
+    .author-profile {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
 
-        .author-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%; /* 圓形圖片 */
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    .author-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%; /* 圓形圖片 */
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-        .author-profile h3 {
-            margin-bottom: 5px;
-            font-size: 1.4em;
-        }
+    .author-profile h3 {
+      margin-bottom: 5px;
+      font-size: 1.4em;
+    }
 
-        .author-profile p {
-            font-size: 0.95em;
-            color: #666;
-            margin-bottom: 20px;
-        }
+    .author-profile p {
+      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 20px;
+    }
 
-        .author-social a {
-            display: inline-block;
-            margin: 0 10px;
-            font-size: 1.5em; /* 放大圖示文字 */
-            color: #555;
-        }
+    .author-social a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.5em; /* 放大圖示文字 */
+      color: #555;
+    }
 
-        /* --- 右側主要文章區塊 --- */
-        .main-content {
-            flex: 3; /* 主內容區塊佔用更多空間 */
-        }
+    /* --- 右側主要文章區塊 --- */
+    .main-content {
+      flex: 3; /* 主內容區塊佔用更多空間 */
+    }
 
-        .article-header h2 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0.5em;
-        }
+    .article-header h2 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5em;
+    }
 
-        .article-meta {
-            color: #767676;
-            margin-bottom: 2em;
-        }
+    .article-meta {
+      color: #767676;
+      margin-bottom: 2em;
+    }
 
-        .article-body p {
-            margin-bottom: 1.5em;
-            font-size: 1.1em;
-        }
-    </style>
+    .article-body p {
+      margin-bottom: 1.5em;
+      font-size: 1.1em;
+    }
+    
+    /* --- (新增) 響應式設計：針對手機等小螢幕裝置 --- */
+    @media (max-width: 768px) {
+      .header-content h1 {
+        font-size: 2.5em; /* 縮小標題，圖片會跟著縮小 */
+      }
+      .page-content-wrapper {
+        flex-direction: column; /* 讓側邊欄和主內容垂直排列 */
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header class="page-header">
-        <div class="header-content">
-            <h1>ATEMPO Coffee</h1>
-            <p>品味生活，從一杯好咖啡開始</p>
-        </div>
-    </header>
-
-    <div class="page-content-wrapper">
-        <aside class="sidebar">
-            <div class="author-profile">
-                <img src="https://raw.githubusercontent.com/atempo-coffee/atempo-coffee.github.io/refs/heads/main/icon/myicon.png"  alt="個人頭像" class="author-avatar">
-                <h3>ATEMPO Coffee</h3>
-                <p>咖啡愛好者，探索生活中的美好片刻。歡迎與我交流！</p>
-                <div class="author-social">
-                    <!-- 這裡使用文字作為圖示，您可以換成 <img> 或 SVG 圖示 -->
-                    <a href="#" title="Facebook">FB</a>
-                    <a href="#" title="Line">LN</a>
-                </div>
-            </div>
-        </aside>
-
-        <main class="main-content">
-            <article>
-                <div class="article-header">
-                    <h2>關於 ATEMPO Coffee</h2>
-                    <p class="article-meta">發布日期：2024年5月21日</p>
-                </div>
-                <div class="article-body">
-                    <p>歡迎來到 ATEMPO Coffee 的世界。在這裡，我們相信每一杯咖啡都承載著一個故事，一段時光。我們的使命是為您尋找來自世界各地的精品咖啡豆，透過精準的烘焙和沖煮，釋放其最純粹、最迷人的風味。</p>
-                    <p>「Atempo」在音樂術語中意為「恢復原速」。我們希望 ATEMPO Coffee 能成為您繁忙生活中的一個休止符，讓您在此放慢腳步，回到屬於自己的節奏，靜靜享受一杯咖啡所帶來的純粹喜悅。</p>
-                    <p>無論您是資深的咖啡愛好者，還是剛開始探索這個奇妙世界的新朋友，我們都誠摯地邀請您加入我們的旅程，一同品味咖啡的美好。</p>
-                </div>
-            </article>
-        </main>
+  <header class="page-header">
+    <div class="header-content">
+      <!-- (修改) 新增容器來放置圖示與標題 -->
+      <div class="header-title-container">
+        <!-- (修改) 新增圖示 -->
+        <img src="https://raw.githubusercontent.com/atempo-coffee/atempo-coffee.github.io/refs/heads/main/icon/atempo-coffee.png" alt="ATEMPO Coffee Logo" class="header-icon">
+        <h1>ATEMPO Coffee</h1>
+      </div>
+      <p>品味生活，從一杯好咖啡開始</p>
     </div>
+  </header>
+
+  <div class="page-content-wrapper">
+    <aside class="sidebar">
+      <div class="author-profile">
+        <img src="https://raw.githubusercontent.com/atempo-coffee/atempo-coffee.github.io/refs/heads/main/icon/myicon.png" alt="個人頭像" class="author-avatar">
+        <h3>ATEMPO Coffee</h3>
+        <p>咖啡愛好者，探索生活中的美好片刻。歡迎與我交流！</p>
+        <div class="author-social">
+          <!-- 這裡使用文字作為圖示，您可以換成 <img> 或 SVG 圖示 -->
+          <a href="#" title="Facebook">FB</a>
+          <a href="#" title="Line">LN</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <article>
+        <div class="article-header">
+          <h2>關於 ATEMPO Coffee</h2>
+          <p class="article-meta">發布日期：2024年5月21日</p>
+        </div>
+        <div class="article-body">
+          <p>歡迎來到 ATEMPO Coffee 的世界。在這裡，我們相信每一杯咖啡都承載著一個故事，一段時光。我們的使命是為您尋找來自世界各地的精品咖啡豆，透過精準的烘焙和沖煮，釋放其最純粹、最迷人的風味。</p>
+          <p>「Atempo」在音樂術語中意為「恢復原速」。我們希望 ATEMPO Coffee 能成為您繁忙生活中的一個休止符，讓您在此放慢腳步，回到屬於自己的節奏，靜靜享受一杯咖啡所帶來的純粹喜悅。</p>
+          <p>無論您是資深的咖啡愛好者，還是剛開始探索這個奇妙世界的新朋友，我們都誠摯地邀請您加入我們的旅程，一同品味咖啡的美好。</p>
+        </div>
+      </article>
+    </main>
+  </div>
 
 </body>
 </html>
