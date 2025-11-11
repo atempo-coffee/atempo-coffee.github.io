@@ -179,16 +179,23 @@
                     >
                      <!-- 說明文字本身設為置中 -->
                     <p class="text-sm text-gray-500 mt-2 text-center">
-                        註：參數形成過程，有參考過艾奇諾咖啡(www.artigiano.com.tw)的資料
+                        註：參數形成過程，有參考艾奇諾咖啡(www.artigiano.com.tw)的資料
                     </p>
                 </div>
                 <!-- 沖煮曲線 -->
-                <div class="mt-8 pt-4 border-t border-gray-200 w-full flex justify-center">
+                <div class="mt-8 pt-4 border-t border-gray-200 w-full">
                     <img 
                         src="https://atempo-coffee.github.io/icon/bastet-geisha/data4-沖煮曲線.png"
                         alt="沖煮曲線"
-                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300"
+                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300 mx-auto block"
                     >
+                    <!-- 說明文字本身設為置中 -->
+                    <p class="text-sm text-gray-500 mt-2 text-center">
+                        在30秒內小水柱悶蒸至90-100ml，30~60秒以中大水柱注水至230-240ml
+                    </p>
+                    <p class="text-sm text-gray-500 mt-2 text-center">
+                        沖煮參數僅供參考，應以實際環境、器材、喜好彈性調整
+                    </p>
                 </div>
                 
                 <!-- 新增的咖啡風味雷達圖區塊 -->
@@ -199,31 +206,6 @@
                         class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300"
                     >
                 </div>
-                
-                     <!-- Section 2: Interactive Timer & Guide -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-stone-800 mb-4">即時沖煮嚮導</h2>
-            <div class="bg-white p-6 md:p-10 rounded-lg shadow-lg text-center">
-                <!-- Timer Display -->
-                <div id="timer-display" class="text-7xl md:text-9xl font-bold text-stone-800 mb-4" style="font-variant-numeric: tabular-nums;">00:00</div>
-                
-                <!-- Instruction & Water Target -->
-                <div class="mb-6">
-                    <div id="instruction-display" class="text-2xl md:text-4xl font-semibold text-amber-700 h-12">準備</div>
-                    <div id="water-target-display" class="text-lg md:text-2xl text-stone-600 h-8">目標水量: 0g</div>
-                </div>
-
-                <!-- Controls -->
-                <div class="flex justify-center space-x-4">
-                    <button id="start-pause-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors w-28">
-                        開始
-                    </button>
-                    <button id="reset-btn" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors w-28">
-                        重設
-                    </button>
-                </div>
-            </div>
-        </section>
                 
                 
             </div>
@@ -264,152 +246,5 @@
             }, 800);
         }
     </script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let timerInterval = null;
-            let currentTime = 0; // in seconds
-            let isRunning = false;
-
-            const timerDisplay = document.getElementById('timer-display');
-            const instructionDisplay = document.getElementById('instruction-display');
-            const waterTargetDisplay = document.getElementById('water-target-display');
-            const startPauseBtn = document.getElementById('start-pause-btn');
-            const resetBtn = document.getElementById('reset-btn');
-
-            function formatTime(seconds) {
-                const minutes = Math.floor(seconds / 60);
-                const remainingSeconds = seconds % 60;
-                return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
-            }
-
-            function updateDisplays() {
-                timerDisplay.textContent = formatTime(currentTime);
-
-                if (currentTime === 0) {
-                    instructionDisplay.textContent = '準備';
-                    waterTargetDisplay.textContent = '目標水量: 0';
-                } else if (currentTime <= 30) {
-                    instructionDisplay.textContent = '1. 小水柱';
-                    waterTargetDisplay.textContent = '目標水量: 90 - 100ml';
-                } else if (currentTime <= 60) {
-                    instructionDisplay.textContent = '2. 主要注水 (中大水柱)';
-                    waterTargetDisplay.textContent = '目標水量: 230 - 240ml';
-                } else {
-                    instructionDisplay.textContent = '3. 滴濾完成';
-                    waterTargetDisplay.textContent = '總時間: ~1:30';
-                }
-            }
-
-            function startTimer() {
-                if (isRunning) return;
-                isRunning = true;
-                startPauseBtn.textContent = '暫停';
-                startPauseBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
-                startPauseBtn.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
-                
-                timerInterval = setInterval(() => {
-                    currentTime++;
-                    updateDisplays();
-                }, 1000);
-            }
-
-            function pauseTimer() {
-                if (!isRunning) return;
-                isRunning = false;
-                startPauseBtn.textContent = '繼續';
-                startPauseBtn.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
-                startPauseBtn.classList.add('bg-green-600', 'hover:bg-green-700');
-                
-                clearInterval(timerInterval);
-            }
-
-            function resetTimer() {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                currentTime = 0;
-                isRunning = false;
-                updateDisplays();
-                
-                startPauseBtn.textContent = '開始';
-                startPauseBtn.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
-                startPauseBtn.classList.add('bg-green-600', 'hover:bg-green-700');
-            }
-
-            startPauseBtn.addEventListener('click', () => {
-                if (isRunning) {
-                    pauseTimer();
-                } else {
-                    startTimer();
-                }
-            });
-
-            resetBtn.addEventListener('click', resetTimer);
-
-            function initChart() {
-                const ctx = document.getElementById('brew-chart').getContext('2d');
-                
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['0s', '30s', '60s', '90s'],
-                        datasets: [{
-                            label: '目標水量 (g)',
-                            data: [0, 90, 230, 230],
-                            borderColor: 'rgb(148, 102, 45)', // amber-800
-                            backgroundColor: 'rgba(148, 102, 45, 0.1)',
-                            borderWidth: 3,
-                            fill: true,
-                            tension: 0.1,
-                            pointBackgroundColor: 'rgb(148, 102, 45)',
-                            pointRadius: 5,
-                            pointHoverRadius: 7,
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: '水量 (g)'
-                                },
-                                ticks: {
-                                    stepSize: 50
-                                }
-                            },
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: '時間 (秒)'
-                                }
-                            }
-                        },
-                        plugins: {
-                            tooltip: {
-                                mode: 'index',
-                                intersect: false,
-                                callbacks: {
-                                    label: function(context) {
-                                        return `${context.dataset.label}: ${context.parsed.y}g`;
-                                    }
-                                }
-                            },
-                            legend: {
-                                display: false
-                            }
-                        }
-                    }
-                });
-            }
-
-            updateDisplays();
-            initChart();
-        });
-    </script>
-    
-    
 </body>
 </html>
