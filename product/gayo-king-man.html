@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蘇門答臘 王者曼特寧 - 咖啡豆</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 自定義 Tailwind 配置 */
+        :root {
+            /* 基礎色調，模擬 Bastet 圖片的風格 */
+            --color-primary: #a16207; /* 濃郁的金色/琥珀色 */
+            --color-secondary: #1f2937; /* 深灰色/接近黑色 */
+            --color-background: #fcf6e8; /* 奶油米白色 */
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: var(--color-background);
+        }
+
+        /* 價格特價樣式 */
+        .price-original {
+            color: #4b5563;
+            text-decoration: line-through;
+            font-weight: 400;
+        }
+
+        .price-special {
+            color: #b91c1c; /* 強烈的紅色來突顯特價 */
+            font-weight: 700;
+        }
+
+        /* 標籤樣式 */
+        .tag-style {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800">
+
+    <!-- 頂部導航/標題 -->
+    <header class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl font-bold text-gray-900 tracking-wider">
+                BASTET Geisha TOP Grade1
+            </h1>
+        </div>
+    </header>
+
+    <!-- 主商品區塊 -->
+    <main class="max-w-7xl mx-auto p-4 sm:p-8 lg:p-12">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden p-6 md:p-10">
+
+            <!-- 圖片與主要資訊區 (響應式：手機堆疊，平板以上並排) -->
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                
+                <!-- 商品圖片 (左側/頂部) -->
+                <div class="md:w-1/2 flex justify-center items-start">
+                    <img 
+                        src="https://atempo-coffee.github.io/icon/gayo-king-man/gayo-king-man-logo-2.png" 
+                        alt="蘇門答臘 王者曼特寧 咖啡豆" 
+                        class="w-full max-w-sm md:max-w-md lg:max-w-lg object-contain rounded-xl shadow-lg border-2 border-gray-100 transition-transform duration-300 hover:scale-[1.02]"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x800/222/FFF?text=gayo-king-man-logo-2+Image';"
+                    >
+                </div>
+                
+                <!-- 商品詳情與購買 (右側/底部) -->
+                <div class="md:w-1/2 pt-4 md:pt-0">
+                    <!-- 品名 -->
+                    <h2 class="text-4xl lg:text-5xl font-extrabold mb-3 leading-tight text-gray-900">
+                        <br>蘇門答臘 王者曼特寧
+                    </h2>
+                    <p class="text-2xl font-light text-gray-600 border-b pb-4 mb-4">
+                        濕剝 三篩四選
+                    </p>
+
+                    <!-- 規格標籤 -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag-style" style="background-color: var(--color-primary);">TOP G1</span>
+                        <span class="tag-style" style="background-color: var(--color-secondary);">藝妓品種</span>
+                        <span class="tag-style" style="background-color: #ef4444;">日曬處理</span>
+                        <span class="tag-style" style="background-color: #3b82f6;">衣索比亞古吉</span>
+                    </div>
+
+                    <!-- 價格區 -->
+                    <div class="mb-8">
+                        <p class="text-2xl price-original">原價: TWD 580 / 半磅</p>
+                        <p class="text-3xl price-special flex items-baseline gap-2 mt-2">
+                            特價: <span>TWD 380</span>
+                            <span class="text-lg text-red-500 font-normal"> / 半磅 (約 227g)</span>
+                        </p>
+                    </div>
+
+                    <!-- 購買按鈕 -->
+                    <button 
+                        id="addToCartButton"
+                        class="w-full py-4 rounded-xl text-2xl font-bold uppercase transition-all duration-300 shadow-lg"
+                        style="background-color: var(--color-primary); color: white; border: 2px solid var(--color-primary);"
+                        onmouseover="this.style.backgroundColor='#d69e2e'; this.style.borderColor='#d69e2e';"
+                        onmouseout="this.style.backgroundColor='var(--color-primary)'; this.style.borderColor='var(--color-primary)';"
+                        onclick="showSuccessMessage('已將商品加入購物車！');"
+                    >
+                        立即詢問
+                    </button>
+                    <p id="successMessage" class="mt-4 text-center text-green-600 font-semibold hidden">
+                        <!-- 成功訊息將顯示在這裡 -->
+                    </p>
+                </div>
+            </div>
+
+            <!-- 詳細描述區塊 -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <h3 class="text-3xl font-bold mb-6 border-l-4 pl-3" style="border-color: var(--color-primary);">
+                    風味與產區故事
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-8 text-lg">
+                    <!-- 產區與處理法 -->
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-700">產區資訊 (Provenance)</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li><span class="font-semibold">國家/產區：</span>衣索比亞 (Ethiopia) / 古吉 (Guji) / 罕貝拉 (Hambella)</li>
+                            <li><span class="font-semibold">海拔：</span>約 2520 masl</li>
+                            <li><span class="font-semibold">品種：</span>藝妓 (Geisha)</li>
+                            <li><span class="font-semibold">處理法：</span>日曬</li>
+                        </ul>
+                    </div>
+
+                    <!-- 風味描述 (Tasting Notes) -->
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-700">風味筆記 (Tasting Notes)</h4>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">梔子花香</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">夜來香</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">甜梨、蘋果甜感</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">百香果</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">熱帶水果</span>
+                        </div>
+                        <p class="text-gray-600">
+                            這款藝妓展現出豐富的層次感。入口有奔放的花果香調性，隨之紮實的BODY有著熱帶水果、百香果等甜感，中段至尾韻帶有甜梨、淡淡蘋果味，令人印象深刻。
+                        </p>
+                        <p class="text-gray-600">
+                            沖煮上建議減少悶蒸，以追求乾淨度為方向。
+                        </p>
+                    </div>
+                </div>
+                <!-- 產地區塊 -->
+                <div class="mt-8 pt-4 border-t border-gray-200 w-full flex justify-center">
+                    <img 
+                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data1-產地.png"
+                        alt="咖啡產地說明"
+                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300"
+                    >
+                </div>
+
+                <!--風味區塊 -->
+                <div class="mt-8 pt-4 border-t border-gray-200 w-full flex justify-center">
+                    <img 
+                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data2-風味.png"
+                        alt="咖啡風味說明"
+                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300"
+                    >
+                </div>
+
+                <!-- 關鍵參數 -->
+                <div class="mt-8 pt-4 border-t border-gray-200 w-full">
+                    <!-- 圖片本身設為 block 且 mx-auto 置中 -->                
+                    <img 
+                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data3-關鍵參數.png"
+                        alt="沖煮參數"                        
+                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300 mx-auto block"
+                    >
+                     <!-- 說明文字本身設為置中 -->
+                    <p class="text-sm text-gray-500 mt-2 text-center">
+                        註：參數形成過程，有參考艾奇諾咖啡(www.artigiano.com.tw)的資料
+                    </p>
+                </div>
+                <!-- 沖煮曲線 -->
+                <div class="mt-8 pt-4 border-t border-gray-200 w-full">
+                    <img 
+                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data4-沖煮曲線.png"
+                        alt="沖煮曲線"
+                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300 mx-auto block"
+                    >
+                    <!-- 說明文字本身設為置中 -->
+                    <p class="text-sm text-gray-500 mt-2 text-center">
+                        在30秒內小水柱悶蒸至90-100ml，30~60秒以中大水柱注水至230-240ml
+                    </p>
+                    <p class="text-sm text-gray-500 mt-2 text-center">
+                        沖煮參數僅供參考，應以實際環境、器材、喜好彈性調整。本參數以 V60濾杯沖煮實驗而成。
+                    </p>
+                </div>
+                
+                <!-- 新增的咖啡風味雷達圖區塊 -->
+                <div class="mt-8 pt-4 border-t border-gray-200 w-full flex justify-center">
+                    <img 
+                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data-redar.png"
+                        alt="咖啡風味雷達圖 (Coffee Flavor Radar Chart)"
+                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300"
+                    >
+                </div>
+
+        <!--  Interactive Timer & Guide -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-stone-800 mb-4">即時沖煮嚮導</h2>
+            <div class="bg-white p-6 md:p-10 rounded-lg shadow-lg text-center">
+                <!-- Timer Display -->
+                <div id="timer-display" class="text-7xl md:text-9xl font-bold text-stone-800 mb-4" style="font-variant-numeric: tabular-nums;">00:00</div>
+                
+                <!-- Instruction & Water Target -->
+                <div class="mb-6">
+                    <div id="instruction-display" class="text-2xl md:text-4xl font-semibold text-amber-700 h-12">準備</div>
+                    <div id="water-target-display" class="text-lg md:text-2xl text-stone-600 h-8">目標水量: 0g</div>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex justify-center space-x-4">
+                    <button id="start-pause-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors w-28">
+                        開始
+                    </button>
+                    <button id="reset-btn" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors w-28">
+                        重設
+                    </button>
+                </div>
+            </div>
+        </section>
+                
+                
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- 頁尾 -->
+    <footer class="text-center py-6 text-gray-500 text-sm">
+        <p>&copy; 2024 BASTET COFFEE 典藏系列. All Rights Reserved.</p>
+    </footer>
+
+    <!-- 彈出/訊息框 JavaScript -->
+    <script>
+        // 模擬的成功訊息顯示功能
+        function showSuccessMessage(message) {
+            const msgElement = document.getElementById('successMessage');
+            
+            // 替換按鈕文字以模擬處理中
+            const button = document.getElementById('addToCartButton');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 處理中...';
+            button.disabled = true;
+
+            setTimeout(() => {
+                // 恢復按鈕
+                button.innerHTML = originalText;
+                button.disabled = false;
+
+                // 顯示成功訊息
+                msgElement.textContent = message;
+                msgElement.classList.remove('hidden');
+                
+                // 訊息顯示 3 秒後自動隱藏
+                setTimeout(() => {
+                    msgElement.classList.add('hidden');
+                }, 3000);
+            }, 800);
+        }
+    </script>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let timerInterval = null;
+            let currentTime = 0; // in seconds
+            let isRunning = false;
+
+            const timerDisplay = document.getElementById('timer-display');
+            const instructionDisplay = document.getElementById('instruction-display');
+            const waterTargetDisplay = document.getElementById('water-target-display');
+            const startPauseBtn = document.getElementById('start-pause-btn');
+            const resetBtn = document.getElementById('reset-btn');
+
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+                return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+            }
+
+            function updateDisplays() {
+                timerDisplay.textContent = formatTime(currentTime);
+
+                if (currentTime === 0) {
+                    instructionDisplay.textContent = '準備';
+                    waterTargetDisplay.textContent = '目標水量: 0g';
+                } else if (currentTime <= 30) {
+                    instructionDisplay.textContent = '1. 悶蒸 (小水柱)';
+                    waterTargetDisplay.textContent = '目標水量: 90 - 100ml';
+                } else if (currentTime <= 60) {
+                    instructionDisplay.textContent = '2. 主要注水 (中大水柱)';
+                    waterTargetDisplay.textContent = '目標水量: 230g - 240g';
+                } else {
+                    instructionDisplay.textContent = '3. 注水完成';
+                    waterTargetDisplay.textContent = '總時間: ~1:30';
+                }
+            }
+
+            function startTimer() {
+                if (isRunning) return;
+                isRunning = true;
+                startPauseBtn.textContent = '暫停';
+                startPauseBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                startPauseBtn.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
+                
+                timerInterval = setInterval(() => {
+                    currentTime++;
+                    updateDisplays();
+                }, 1000);
+            }
+
+            function pauseTimer() {
+                if (!isRunning) return;
+                isRunning = false;
+                startPauseBtn.textContent = '繼續';
+                startPauseBtn.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
+                startPauseBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+                
+                clearInterval(timerInterval);
+            }
+
+            function resetTimer() {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                currentTime = 0;
+                isRunning = false;
+                updateDisplays();
+                
+                startPauseBtn.textContent = '開始';
+                startPauseBtn.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
+                startPauseBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+            }
+
+            startPauseBtn.addEventListener('click', () => {
+                if (isRunning) {
+                    pauseTimer();
+                } else {
+                    startTimer();
+                }
+            });
+
+            resetBtn.addEventListener('click', resetTimer);
+
+            function initChart() {
+                const ctx = document.getElementById('brew-chart').getContext('2d');
+                
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['0s', '30s', '60s', '90s'],
+                        datasets: [{
+                            label: '目標水量 (g)',
+                            data: [0, 90, 230, 230],
+                            borderColor: 'rgb(148, 102, 45)', // amber-800
+                            backgroundColor: 'rgba(148, 102, 45, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.1,
+                            pointBackgroundColor: 'rgb(148, 102, 45)',
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '水量 (g)'
+                                },
+                                ticks: {
+                                    stepSize: 50
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: '時間 (秒)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                mode: 'index',
+                                intersect: false,
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.dataset.label}: ${context.parsed.y}g`;
+                                    }
+                                }
+                            },
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+
+            updateDisplays();
+            initChart();
+        });
+    </script>
+</body>
+</html>
