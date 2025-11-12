@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蘇門答臘 王者曼特寧 - 咖啡豆</title>
-    <!-- 載入 Tailwind CSS -->
+    <title>迦佑山脈王者曼特寧</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -44,64 +43,116 @@
             font-weight: 600;
             letter-spacing: 0.5px;
         }
+        
+        /* 導航連結專用樣式 */
+        .nav-link {
+            color: var(--color-secondary);
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav-link:hover {
+            color: var(--color-primary);
+            background-color: #f3f4f6;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+            color: #292524; /* stone-800 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 60rem; /* max-w-2xl */
+            margin-left: auto;
+            margin-right: auto;
+            height: 24rem; /* h-96 */
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 18rem; /* h-72 */
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen text-gray-800">
 
-    <!-- 頂部導航/標題 -->
-    <header class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <h1 class="text-2xl font-bold text-gray-900 tracking-wider">
-                BASTET Geisha TOP Grade1
-            </h1>
+    <header class="bg-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/index.html" class="text-xl font-bold text-gray-900 tracking-wider hover:text-gray-700 transition duration-150">
+                        ATEMPO COFFEE</a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="/coffee-beans.html" class="nav-link">找豆子</a>
+                    <a href="/blog.html" class="nav-link">聊咖啡</a>
+                    <a href="/blog.html" class="nav-link">聊音樂</a>
+                    <a href="/about.html" class="nav-link">關於 ATEMPO Coffee</a>                    
+                </nav>
+
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-500 hover:text-gray-700 p-2 rounded-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/coffee-beans.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-amber-700">咖啡豆</a>
+                <a href="/about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-amber-700">關於我</a>
+                <a href="/blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-amber-700">咖啡天地</a>
+            </div>
         </div>
     </header>
-
-    <!-- 主商品區塊 -->
     <main class="max-w-7xl mx-auto p-4 sm:p-8 lg:p-12">
         <div class="bg-white rounded-3xl shadow-xl overflow-hidden p-6 md:p-10">
 
-            <!-- 圖片與主要資訊區 (響應式：手機堆疊，平板以上並排) -->
             <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
                 
-                <!-- 商品圖片 (左側/頂部) -->
                 <div class="md:w-1/2 flex justify-center items-start">
                     <img 
                         src="https://atempo-coffee.github.io/icon/gayo-king-man/gayo-king-man-logo-2.png" 
-                        alt="蘇門答臘 王者曼特寧 咖啡豆" 
+                        alt="迦佑山脈王者曼特寧" 
                         class="w-full max-w-sm md:max-w-md lg:max-w-lg object-contain rounded-xl shadow-lg border-2 border-gray-100 transition-transform duration-300 hover:scale-[1.02]"
-                        onerror="this.onerror=null; this.src='https://placehold.co/600x800/222/FFF?text=gayo-king-man-logo-2+Image';"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x800/222/FFF?text=Bastet+Geisha+Image';"
                     >
                 </div>
                 
-                <!-- 商品詳情與購買 (右側/底部) -->
                 <div class="md:w-1/2 pt-4 md:pt-0">
-                    <!-- 品名 -->
                     <h2 class="text-4xl lg:text-5xl font-extrabold mb-3 leading-tight text-gray-900">
-                        <br>蘇門答臘 王者曼特寧
+                         <br>迦佑山脈王者曼特寧
                     </h2>
-                    <p class="text-2xl font-light text-gray-600 border-b pb-4 mb-4">
-                        濕剝 三篩四選
+                         <p class="text-2xl font-light text-gray-600 border-b pb-4 mb-4">
+                        20目 濕剝 三篩四選
                     </p>
 
-                    <!-- 規格標籤 -->
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="tag-style" style="background-color: var(--color-primary);">TOP G1</span>
-                        <span class="tag-style" style="background-color: var(--color-secondary);">藝妓品種</span>
-                        <span class="tag-style" style="background-color: #ef4444;">日曬處理</span>
-                        <span class="tag-style" style="background-color: #3b82f6;">衣索比亞古吉</span>
+                        <span class="tag-style" style="background-color: var(--color-primary);">20目</span>
+                        <span class="tag-style" style="background-color: var(--color-secondary);">濕剝</span>
+                        <span class="tag-style" style="background-color: #ef4444;">三篩四選</span>
+                        <span class="tag-style" style="background-color: #3b82f6;">蘇門答臘 亞齊省</span>
                     </div>
-
-                    <!-- 價格區 -->
                     <div class="mb-8">
-                        <p class="text-2xl price-original">原價: TWD 580 / 半磅</p>
+                        <p class="text-2xl price-original">原價: TWD 650 / 半磅</p>
                         <p class="text-3xl price-special flex items-baseline gap-2 mt-2">
-                            特價: <span>TWD 380</span>
-                            <span class="text-lg text-red-500 font-normal"> / 半磅 (約 227g)</span>
+                            特價: <span>TWD 420</span>
+                        <span class="text-lg text-red-500 font-normal"> / 半磅(約227g ±5g)</span>
                         </p>
                     </div>
 
-                    <!-- 購買按鈕 -->
                     <button 
                         id="addToCartButton"
                         class="w-full py-4 rounded-xl text-2xl font-bold uppercase transition-all duration-300 shadow-lg"
@@ -113,95 +164,45 @@
                         立即詢問
                     </button>
                     <p id="successMessage" class="mt-4 text-center text-green-600 font-semibold hidden">
-                        <!-- 成功訊息將顯示在這裡 -->
-                    </p>
+                        </p>
                 </div>
             </div>
 
-            <!-- 詳細描述區塊 -->
             <div class="mt-12 pt-8 border-t border-gray-200">
                 <h3 class="text-3xl font-bold mb-6 border-l-4 pl-3" style="border-color: var(--color-primary);">
-                    風味與產區故事
+                    產區與風味
                 </h3>
-
                 <div class="grid md:grid-cols-2 gap-8 text-lg">
-                    <!-- 產區與處理法 -->
                     <div>
                         <h4 class="text-xl font-bold mb-2 text-gray-700">產區資訊 (Provenance)</h4>
                         <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                            <li><span class="font-semibold">國家/產區：</span>衣索比亞 (Ethiopia) / 古吉 (Guji) / 罕貝拉 (Hambella)</li>
-                            <li><span class="font-semibold">海拔：</span>約 2520 masl</li>
-                            <li><span class="font-semibold">品種：</span>藝妓 (Geisha)</li>
-                            <li><span class="font-semibold">處理法：</span>日曬</li>
+                            <li><span class="font-semibold">國家/產區：</span>
+                            印尼 / 蘇門答臘 亞齊省(Aceh)</li>
+                            <li><span class="font-semibold">海拔：</span>
+                            1700-2000 公尺</li>                            
+                            <li><span class="font-semibold">品種：</span>
+                            Typical</li>
+                            <li><span class="font-semibold">處理法：</span>
+                            濕剝（Giling Basah）</li>
                         </ul>
                     </div>
 
-                    <!-- 風味描述 (Tasting Notes) -->
                     <div>
-                        <h4 class="text-xl font-bold mb-2 text-gray-700">風味筆記 (Tasting Notes)</h4>
+                        <h4 class="text-xl font-bold mb-2 text-gray-700">風味筆記</h4>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">梔子花香</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">夜來香</span>
-                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">甜梨、蘋果甜感</span>
-                            <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">百香果</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">熱帶水果</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">藥草</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">柚子、葡萄柚、黑李</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">奶油、焦糖</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">太妃糖</span>
                         </div>
-                        <p class="text-gray-600">
-                            這款藝妓展現出豐富的層次感。入口有奔放的花果香調性，隨之紮實的BODY有著熱帶水果、百香果等甜感，中段至尾韻帶有甜梨、淡淡蘋果味，令人印象深刻。
+                           <p class="text-gray-600">
+                            
                         </p>
                         <p class="text-gray-600">
-                            沖煮上建議減少悶蒸，以追求乾淨度為方向。
+                            
                         </p>
                     </div>
-                </div>
-                <!-- 產地區塊 -->
-                <div class="mt-8 pt-4 border-t border-gray-200 w-full flex justify-center">
-                    <img 
-                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data1-產地.png"
-                        alt="咖啡產地說明"
-                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300"
-                    >
-                </div>
-
-                <!--風味區塊 -->
-                <div class="mt-8 pt-4 border-t border-gray-200 w-full flex justify-center">
-                    <img 
-                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data2-風味.png"
-                        alt="咖啡風味說明"
-                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300"
-                    >
-                </div>
-
-                <!-- 關鍵參數 -->
-                <div class="mt-8 pt-4 border-t border-gray-200 w-full">
-                    <!-- 圖片本身設為 block 且 mx-auto 置中 -->                
-                    <img 
-                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data3-關鍵參數.png"
-                        alt="沖煮參數"                        
-                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300 mx-auto block"
-                    >
-                     <!-- 說明文字本身設為置中 -->
-                    <p class="text-sm text-gray-500 mt-2 text-center">
-                        註：參數形成過程，有參考艾奇諾咖啡(www.artigiano.com.tw)的資料
-                    </p>
-                </div>
-                <!-- 沖煮曲線 -->
-                <div class="mt-8 pt-4 border-t border-gray-200 w-full">
-                    <img 
-                        src="https://atempo-coffee.github.io/icon/bastet-geisha/data4-沖煮曲線.png"
-                        alt="沖煮曲線"
-                        class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300 mx-auto block"
-                    >
-                    <!-- 說明文字本身設為置中 -->
-                    <p class="text-sm text-gray-500 mt-2 text-center">
-                        在30秒內小水柱悶蒸至90-100ml，30~60秒以中大水柱注水至230-240ml
-                    </p>
-                    <p class="text-sm text-gray-500 mt-2 text-center">
-                        沖煮參數僅供參考，應以實際環境、器材、喜好彈性調整。本參數以 V60濾杯沖煮實驗而成。
-                    </p>
-                </div>
-                
-                <!-- 新增的咖啡風味雷達圖區塊 -->
+                </div> 
                 <div class="mt-8 pt-4 border-t border-gray-200 w-full flex justify-center">
                     <img 
                         src="https://atempo-coffee.github.io/icon/bastet-geisha/data-redar.png"
@@ -209,21 +210,54 @@
                         class="w-full max-w-2xl object-contain rounded-xl shadow-lg transition-transform duration-300"
                     >
                 </div>
-
-        <!--  Interactive Timer & Guide -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-stone-800 mb-4">即時沖煮嚮導</h2>
+                <div class="mt-12 pt-8 border-t border-gray-200">                
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-stone-800 mb-4">關鍵參數</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="text-5xl mb-2">⚖️</div>
+                            <div class="text-xl font-semibold text-stone-700">豆量</div>
+                            <div class="text-3xl font-bold text-amber-800">16g</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="text-5xl mb-2">💧</div>
+                            <div class="text-xl font-semibold text-stone-700">總水量</div>           
+                            <div class="text-3xl font-bold text-amber-800">91℃</div>
+                            <div class="text-3xl font-bold text-amber-800">230-240ml</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="text-5xl mb-2">⏱️</div>
+                            <div class="text-xl font-semibold text-stone-700">總時間</div>
+                            <div class="text-3xl font-bold text-amber-800">~1:30</div>
+                        </div>
+                        <p class="text-base text-gray-500 mt-2 text-center">
+                        註：參數形成過程，有參考艾奇諾咖啡(www.artigiano.com.tw)的資料
+                        </p>
+                    </div>
+                </section>
+                </div>
+                <br>
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-stone-800 mb-4">沖煮曲線圖</h2>
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                        <p class="text-xl font-semibold text-stone-800 mb-4 text-center">
+                            在30秒內小水柱悶蒸至90-100ml，<br>30~60秒以中大水柱注水至230-240ml
+                        </p>
+                        <div class="chart-container">
+                            <canvas id="brew-chart"></canvas>
+                        </div>
+                    </div>
+                </section>
+                <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-stone-800 mb-4">即時沖煮導航</h2>
             <div class="bg-white p-6 md:p-10 rounded-lg shadow-lg text-center">
-                <!-- Timer Display -->
                 <div id="timer-display" class="text-7xl md:text-9xl font-bold text-stone-800 mb-4" style="font-variant-numeric: tabular-nums;">00:00</div>
                 
-                <!-- Instruction & Water Target -->
                 <div class="mb-6">
                     <div id="instruction-display" class="text-2xl md:text-4xl font-semibold text-amber-700 h-12">準備</div>
                     <div id="water-target-display" class="text-lg md:text-2xl text-stone-600 h-8">目標水量: 0g</div>
                 </div>
 
-                <!-- Controls -->
                 <div class="flex justify-center space-x-4">
                     <button id="start-pause-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors w-28">
                         開始
@@ -241,13 +275,10 @@
         </div>
     </main>
     
-    <!-- 頁尾 -->
     <footer class="text-center py-6 text-gray-500 text-sm">
-        <p>&copy; 2024 BASTET COFFEE 典藏系列. All Rights Reserved.</p>
+        <p>&copy; ATEMPO Coffee All Rights Reserved.</p>
     </footer>
-
-    <!-- 彈出/訊息框 JavaScript -->
-    <script>
+     <script>
         // 模擬的成功訊息顯示功能
         function showSuccessMessage(message) {
             const msgElement = document.getElementById('successMessage');
@@ -274,7 +305,7 @@
             }, 800);
         }
     </script>
-     <script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             let timerInterval = null;
             let currentTime = 0; // in seconds
