@@ -16,15 +16,23 @@ function formatTime(seconds) {
     return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
-const brewSteps = [
-    { target: 0, time: 0, instruction: "準備" },
-    { target: 30, time: 20, instruction: "1. 悶蒸 (小水柱)" },
-    { target: 240, time: 60, instruction: "2. 主要注水 (中大水柱)" },
-    { target: 240, time: 90, instruction: "3. 注水完成" }
-];
+function updateDisplays() {
+    timerDisplay.textContent = formatTime(currentTime);
 
-const chartData = [0, 30, 240, 240];
-const chartLabels = ['0', '20', '60', '90'];
+    if (currentTime === 0) {
+        instructionDisplay.textContent = '準備';
+        waterTargetDisplay.textContent = '目標水量: 0g';
+    } else if (currentTime <= 20) {
+        instructionDisplay.textContent = '1. 悶蒸 (小水柱)';
+        waterTargetDisplay.textContent = '目標水量: 30ml';
+    } else if (currentTime <= 60) {
+        instructionDisplay.textContent = '2. 主要注水 (中大水柱)';
+        waterTargetDisplay.textContent = '目標水量: 230g - 240g';
+    } else {
+        instructionDisplay.textContent = '3. 注水完成';
+        waterTargetDisplay.textContent = '總時間: ~1:30';
+    }
+}
 
 function startTimer() {
     if (isRunning) return;
