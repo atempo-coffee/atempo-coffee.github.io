@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表 - ATEMPO Coffee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 自定義 Tailwind 配置 */
+        :root {
+            /* 基礎色調，模擬 Bastet 圖片的風格 */
+            --color-primary: #a16207; /* 濃郁的金色/琥珀色 */
+            --color-secondary: #1f2937; /* 深灰色/接近黑色 */
+            --color-background: #fcf6e8; /* 奶油米白色 */
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: var(--color-background);
+        }
+
+        /* 價格特價樣式 */
+        .price-original {
+            color: #4b5563;
+            text-decoration: line-through;
+            font-weight: 400;
+        }
+
+        .price-special {
+            color: #b91c1c; /* 強烈的紅色來突顯特價 */
+            font-weight: 700;
+        }
+
+        /* 標籤樣式 */
+        .tag-style {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 導航連結專用樣式 */
+        .nav-link {
+            color: var(--color-secondary);
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav-link:hover {
+            color: var(--color-primary);
+            background-color: #f3f4f6;
+        }
+    </style>
+    <!--import JS -->
+    <script src="https://atempo-coffee.github.io/common/js/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.loadComponent) {
+                window.loadComponent('https://atempo-coffee.github.io/common/header-component.html', 'header-placeholder');
+            }
+        });
+    </script>
+</head>
+<body class="min-h-screen text-gray-800">
+    <!--頂端列改為共用 -->
+    <div id="header-placeholder"></div>
+    
+    <main class="max-w-7xl mx-auto p-4 sm:p-8 lg:p-12">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden p-6 md:p-10">
+            <h2 class="text-4xl lg:text-5xl font-extrabold mb-8 leading-tight text-gray-900 text-center">
+                商品列表
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <a href="https://atempo-coffee.github.io/product/bastet-geisha.html">
+                        <img src="https://atempo-coffee.github.io/icon/bastet-geisha/bastet-geisha-600x800-1.png" alt="芭絲特藝妓 日曬 TOP G1" class="w-full h-72 object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-1">芭絲特藝妓 日曬 TOP G1</h3>
+                            <p class="text-gray-600">點擊查看詳情</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <a href="https://atempo-coffee.github.io/product/gayo-king-man.html">
+                        <img src="https://atempo-coffee.github.io/icon/gayo-king-man/gayo-king-man-logo-2.png" alt="迦佑山脈王者曼特寧" class="w-full h-72 object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-1">迦佑山脈王者曼特寧</h3>
+                            <p class="text-gray-600">點擊查看詳情</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="text-center py-6 text-gray-500 text-sm">
+        <p>&copy; ATEMPO Coffee All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
