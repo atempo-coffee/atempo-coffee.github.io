@@ -22,7 +22,7 @@ function updateDisplays() {
     if (currentTime === 0) {
         instructionDisplay.textContent = '準備';
         waterTargetDisplay.textContent = '目標水量: 0g';
-    } else if (currentTime <= 30) {
+    } else if (currentTime <= 20) {
         instructionDisplay.textContent = '1. 悶蒸 (小水柱)';
         waterTargetDisplay.textContent = '目標水量: 30ml';
     } else if (currentTime <= 60) {
