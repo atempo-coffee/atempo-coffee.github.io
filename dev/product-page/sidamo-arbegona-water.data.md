@@ -3,7 +3,7 @@
 
 # 商品圖片 src and alt
 ##商品圖片 src
-https://atempo-coffee.github.io/icon/gayo-king-man/gayo-king-man-logo-2.png
+/icon/sidamo-arbegona-wash/argegona-logo-3.png
 # 商品圖片 alt
 如 Product Title
 
@@ -16,41 +16,41 @@ https://atempo-coffee.github.io/icon/gayo-king-man/gayo-king-man-logo-2.png
 
 # 品項規格
 ## 品項規格.tag1
-20目
+水洗
 ## 品項規格.tag2
-濕剝
+頂級 TOP G1
 ## 品項規格.tag3
-三篩四選
+衣索匹亞 西達摩
 ## 品項規格.tag4
-蘇門答臘 亞齊省
+OLOROSO Station 甜雪莉處理站
 
 # 價格資訊
 ## 價格資訊.原價
-650
+550
 ## 價格資訊.特價
-420
+360
 ## 價格資訊.規格
 半磅(約227g ±5g)
 
 # 產區資料
 ## 產區資料.地區
-印尼 / 蘇門答臘 亞齊省(Aceh)
+衣索比亞/西達摩 (Ethiopia/Sidama)
 ## 產區資料.海拔
-1700-2000 公尺
+2237 masl
 ## 產區資料.品種
-Typical
+74158 衣索比亞古優原生種
 ## 產區資料.處理法
-濕剝（Giling Basah）
+水洗
 
 # 風味筆記
 ## 風味筆記.tag1
-藥草
+野薑花
 ## 風味筆記.tag2
-柚子、葡萄柚、黑李
+杏桃
 ## 風味筆記.tag3
-奶油、焦糖
+百合花
 ## 風味筆記.tag4
-太妃糖
+太妃糖、熱帶果汁
 ## 風味筆記.desc1
 ## 風味筆記.desc2
 # 關鍵參數
