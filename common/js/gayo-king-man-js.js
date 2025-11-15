@@ -142,7 +142,7 @@ function initChart() {
 document.addEventListener('DOMContentLoaded', () => {
     // 載入共用導航列 (使用 utils.js 中的全域函式)
     if (window.loadComponent) {
-        window.loadComponent('https://atempo-coffee.github.io/common/header-component.html', 'header-placeholder');
+        window.loadComponent('/common/header-component.html', 'header-placeholder');
     }
     
     // 初始化沖煮計時器和曲線圖
