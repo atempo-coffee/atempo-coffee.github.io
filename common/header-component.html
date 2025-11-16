@@ -31,17 +31,9 @@
 </header>
 
 <script>
-    // 在元件被載入後，加入行動裝置選單的切換邏輯
-    document.addEventListener('DOMContentLoaded', () => {
-        const button = document.getElementById('mobile-menu-button');
-        const menu = document.getElementById('mobile-menu-content');
-
-        if (button && menu) {
-            button.addEventListener('click', () => {
-                const isExpanded = button.getAttribute('aria-expanded') === 'true' || false;
-                button.setAttribute('aria-expanded', !isExpanded);
-                menu.classList.toggle('hidden');
-            });
-        }
-    });
+//DOMContentLoaded 事件，可以直接執行。 
+const button = document.getElementById('mobile-menu-button'); 
+const menu = document.getElementById('mobile-menu-content'); 
+if (button && menu) { 
+    button.addEventListener('click', () => { const isExpanded = button.getAttribute('aria-expanded') === 'true'}};
 </script>
