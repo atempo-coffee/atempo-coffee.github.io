@@ -55,3 +55,47 @@
 中文: 一束優雅的橘色與白色百合花，復古植物插畫風格，置於深色紋理背景中央，底部有色塊和古典襯線字體，專輯封面藝術。
 
 
+--
+主體：山地尼亞拉羚 (Mountain Nyala)在高海拔叢林
+
+風格：荷蘭黃金時代寫實主義
+質地極為細膩寫實
+光影：Chiaroscuro (明暗對照法)
+構圖：Elegant (優雅的)
+----
+
+Generate A Coffee Bean Label:
+The size and ratio must refer the source image.
+
+A minimalist pencil sketch portrait of a Guji Oromo man. He features the traditional Gutoo hairstyle (an intricate braided bun on top of the head) and is adorned with white cowrie shell decorations on a headband and necklace. He is gently holding a traditional Kirar (Ethiopian five-string lyre). The art style is a rough charcoal drawing with clean lines and graphite shading. High contrast, white background, heavy use of negative space. Artistic, cultural, and elegant.
+
+At the bottom, the text "Nensebo Queen Berry G1" is displayed on a dark background.
+
+Generate A Coffee Bean Label:
+The size and ratio must refer the source image.
+
+A minimalist pencil sketch portrait of a Guji Oromo man. He features the traditional Gutoo hairstyle (an intricate braided bun on top of the head) and is adorned with white cowrie shell decorations on a headband and necklace. The art style is a rough charcoal drawing with clean lines and graphite shading. High contrast, white background, heavy use of negative space. Artistic, cultural, and elegant.
+
+At the bottom, the text "Nensebo Queen Berry G1" is displayed on a dark background.
+
+Sidama Arbegona
+-----
+Generate A Coffee Bean Label:
+The size and ratio must refer the source image.
+
+A minimalist pencil sketch of a Sidamo Lark. The bird is depicted standing naturally, capturing its small crest and textured plumage. The art style is a rough charcoal drawing with clean lines and graphite shading. High contrast, white background, heavy use of negative space. Artistic, naturalistic, and elegant.
+
+At the bottom, the text "Sidama Arbegona Natural G1" is displayed on a different dark background.
+-----
+Generate A Coffee Bean Label:
+The size and ratio must refer the source image.
+
+主體：包含葉子的苿莉花
+
+- 風格：荷蘭黃金時代寫實主義
+- 質地極為細膩寫實
+- 光影：Chiaroscuro (明暗對照法)
+- 構圖：Elegant (優雅的)
+
+At the bottom, the text " Kersa Gelana Geisha Washed G1" is displayed on a different dark background.
+----
