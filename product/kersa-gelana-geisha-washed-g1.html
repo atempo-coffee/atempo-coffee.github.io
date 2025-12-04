@@ -82,9 +82,13 @@
             }
         }
     </style>
-    <!--import JS -->
     <script src="/common/js/utils.js"></script>
-    <script src="/common/js/gayo-king-man-js.js"></script> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 使用 utils.js 中的 loadComponent 函式來載入共用的 header
+            loadComponent('/common/header-component.html', 'header-placeholder');
+        });
+    </script> 
 </head>
 <body class="min-h-screen text-gray-800">
    <!--頂端列改為共用 -->
