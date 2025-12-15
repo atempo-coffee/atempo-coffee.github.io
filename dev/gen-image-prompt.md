@@ -99,3 +99,21 @@ The size and ratio must refer the source image.
 
 At the bottom, the text " Kersa Gelana Geisha Washed G1" is displayed on a different dark background.
 ----
+素描風格
+Generate A Coffee Bean Label:
+The size and ratio must refer the source image.
+
+A minimalist pencil sketch of a Sidamo Lark. The bird is depicted standing naturally, capturing its small crest and textured plumage. The art style is a rough charcoal drawing with clean lines and graphite shading. High contrast, white background, heavy use of negative space. Artistic, naturalistic, and elegant.
+
+At the bottom, the text "Sidama Arbegona Natural G1" is displayed on a different dark background.
+----
+素描風格 參數
+Generate A Coffee Bean Label:
+The size and ratio must refer the source image.
+
+A minimalist pencil sketch of a #Subject. The #Subject is depicted  naturally, capturing its small crest and textured plumage. The art style is a rough charcoal drawing with clean lines and graphite shading. High contrast, white background, heavy use of negative space. Artistic, naturalistic, and elegant.
+
+At the bottom, the text  #Text is displayed on a different dark background.
+-
+#Subject: Black Rhino
+#Text: Kenya Kirinyaga Kamwangi AA TOP Washed 
