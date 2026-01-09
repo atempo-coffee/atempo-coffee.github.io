@@ -137,15 +137,5 @@ function initChart() {
         }
     });
 }
-
-// 頁面載入時執行所有初始化腳本
-document.addEventListener('DOMContentLoaded', () => {
-    // 載入共用導航列 (使用 utils.js 中的全域函式)
-    if (window.loadComponent) {
-        window.loadComponent('/common/header-component.html', 'header-placeholder');
-    }
-    
-    // 初始化沖煮計時器和曲線圖
-    updateDisplays();
-    initChart();
-});
+/**
+ */
