@@ -31,9 +31,28 @@
 </header>
 
 <script>
-//DOMContentLoaded 事件，可以直接執行。 
-const button = document.getElementById('mobile-menu-button'); 
-const menu = document.getElementById('mobile-menu-content'); 
-if (button && menu) { 
-    button.addEventListener('click', () => { const isExpanded = button.getAttribute('aria-expanded') === 'true'}};
+document.addEventListener('DOMContentLoaded', function () {
+    const button = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu-content');
+
+    if (button && menu) {
+        button.addEventListener('click', () => {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            // 切換 aria-expanded 屬性
+            button.setAttribute('aria-expanded', !isExpanded);
+            
+            // 切換選單的顯示/隱藏
+            menu.classList.toggle('hidden');
+        });
+    }
+
+    // 將 header-component.html 內容載入到 #header-placeholder
+    fetch('/common/header-component.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+});
 </script>
