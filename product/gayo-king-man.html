@@ -252,5 +252,16 @@
         <p>&copy; ATEMPO Coffee All Rights Reserved.</p>
     </footer>
 
+    <script>
+        // 頁面載入後，執行 loadComponent 來載入共用標頭
+        document.addEventListener('DOMContentLoaded', function() {
+            // 使用 utils.js 中定義的 loadComponent 函式
+            if (window.loadComponent) {
+                window.loadComponent('/common/header-component.html', 'header-placeholder');
+            } else {
+                console.error('loadComponent function not found. Make sure utils.js is loaded correctly.');
+            }
+        });
+    </script>
 </body>
 </html>
