@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Product Title -->
+    <title>2026 福氣新春掛耳包禮盒組</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 自定義 Tailwind 配置 */
+        :root {
+            /* 基礎色調，模擬 Bastet 圖片的風格 */
+            --color-primary: #a16207; /* 濃郁的金色/琥珀色 */
+            --color-secondary: #1f2937; /* 深灰色/接近黑色 */
+            --color-background: #fcf6e8; /* 奶油米白色 */
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: var(--color-background);
+        }
+
+        /* 價格特價樣式 */
+        .price-original {
+            color: #4b5563;
+            text-decoration: line-through;
+            font-weight: 400;
+        }
+
+        .price-special {
+            color: #b91c1c; /* 強烈的紅色來突顯特價 */
+            font-weight: 700;
+        }
+
+        /* 標籤樣式 */
+        .tag-style {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 導航連結專用樣式 */
+        .nav-link {
+            color: var(--color-secondary);
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav-link:hover {
+            color: var(--color-primary);
+            background-color: #f3f4f6;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+            color: #292524; /* stone-800 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 60rem; /* max-w-2xl */
+            margin-left: auto;
+            margin-right: auto;
+            height: 24rem; /* h-96 */
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 18rem; /* h-72 */
+            }
+        }
+    </style>
+    <script src="/common/js/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 使用 utils.js 中的 loadComponent 函式來載入共用的 header
+            loadComponent('/common/header-component.html', 'header-placeholder');
+        });
+    </script> 
+</head>
+<body class="min-h-screen text-gray-800">
+   <!--頂端列改為共用 -->
+    <div id="header-placeholder"></div>
+    
+    <main class="max-w-7xl mx-auto p-4 sm:p-8 lg:p-12">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden p-6 md:p-10">
+
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                
+                <div class="md:w-1/2 flex justify-center items-start">
+                    <!-- 商品圖片 src and alt-->
+                    <img 
+                        src="/icon/drip2026-spring/1282738-1.jpg" 
+                        alt="2026 福氣新春掛耳包禮盒組" 
+                        class="w-full max-w-sm md:max-w-md lg:max-w-lg object-contain rounded-xl shadow-lg border-2 border-gray-100 transition-transform duration-300 hover:scale-[1.02]"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x800/222/FFF?text=Bastet+Geisha+Image';"
+                    >
+                </div>
+                
+                <div class="md:w-1/2 pt-4 md:pt-0">
+                    <!--品名-->
+                    <h2 class="text-4xl lg:text-5xl font-extrabold mb-3 leading-tight text-gray-900">
+                         <!--  品名.大標-->
+                        <br>2026 福氣新春掛耳包<br>禮盒組
+                    </h2>
+                         <!--  品名.小標-->
+                    <p class="text-2xl font-light text-gray-600 border-b pb-4 mb-4">
+                        春節禮盒  精品濾掛
+                    </p>
+
+                    <!-- 品項規格-->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <!-- 品項規格.tag1-->
+                        <span class="tag-style" style="background-color: var(--color-primary);">3種風格</span>
+                        <!-- 品項規格.tag2-->
+                        <span class="tag-style" style="background-color: var(--color-secondary);">6款豆子</span>
+                        <!-- 品項規格.tag3-->
+                        <span class="tag-style" style="background-color: #ef4444;">12包</span>
+                        <!-- 品項規格.tag4-->
+                        <span class="tag-style" style="background-color: #3b82f6;">精品濾掛 禮盒裝</span>
+                    </div>
+                    <!--價格資訊-->
+                    <div class="mb-8">
+                        <!--價格資訊.原價 -->
+                        <p class="text-2xl price-original">原價: TWD 600 / 12包(每包約11g ±0.5g)</p>
+                        <!--價格資訊.特價 -->
+                        <p class="text-3xl price-special flex items-baseline gap-2 mt-2">
+                            特價: <span>TWD 520</span>
+                        <!--價格資訊.規格 -->
+                        <span class="text-lg text-red-500 font-normal">1盒12包(每包約11g ±0.5g)</span>
+                        </p>
+                    </div>
+
+                    <a 
+                        href="https://lin.ee/Pfbb2vI"
+                        target="_blank"
+                        id="addToCartButton"
+                        class="w-full py-4 rounded-xl text-2xl font-bold uppercase transition-all duration-300 shadow-lg text-center" 
+                        style="display: block; background-color: var(--color-primary); color: white; border: 2px solid var(--color-primary); text-decoration: none;"                        
+                        onmouseover="this.style.backgroundColor='#d69e2e'; this.style.borderColor='#d69e2e';"
+                        onmouseout="this.style.backgroundColor='var(--color-primary)'; this.style.borderColor='var(--color-primary)';"
+                        role="button"
+                    >
+                        加入官方LINE好友 立即預訂
+                    </a>
+                    <p id="successMessage" class="mt-4 text-center text-green-600 font-semibold hidden">
+                        </p>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <h3 class="text-3xl font-bold mb-6 border-l-4 pl-3" style="border-color: var(--color-primary);">
+                    產區與風味
+                </h3>
+                <!--產區資料 -->
+                <div class="grid md:grid-cols-2 gap-8 text-lg">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-700">產區資訊 (Provenance)</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">                            
+                            <li>3種風格．6款豆子．12包濾掛，世界精品一次滿足</li>
+                            <li>若遇豆子品項不足，將以同等級或以上品項替代</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div>
+                        <!--風味筆記-->
+                        <h4 class="text-xl font-bold mb-2 text-gray-700">風味筆記</h4>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <!--風味筆記.tag1-->
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">馨香之氣系列</span>
+                            <!--風味筆記.tag2-->
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">秋雨之福系列</span>
+                            <!--風味筆記.tag3-->
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">如鷹展翅系列</span>                            
+                        </div>
+
+                        <!--風味筆記.desc1-->
+                        <div class="text-gray-600 space-y-4">
+                               <h3 class="text-xl font-bold text-gray-800 mb-2">【馨香之氣】 系列</h3>                               
+                               <p>
+                               花香在口中綻放，像春日裡輕柔的一縷風。
+                               </p>
+                               <p></p>
+                         </div>
+                         <div class="text-gray-600 space-y-4">
+                               <h3 class="text-xl font-bold text-gray-800 mb-2">【秋雨之福】 系列</h3>                               
+                               <p>
+                               適合愛果香、喜歡酸甜層次的你    像秋雨後的果園，充滿清爽、純淨的果香調。
+                               </p>
+                               <p></p>
+                         </div>
+                         <div class="text-gray-600 space-y-4">
+                               <h3 class="text-xl font-bold text-gray-800 mb-2">【如鷹展翅】 系列</h3>                               
+                               <p>
+                               適合喜歡厚實 Body、濃郁口感的你  醇厚、深沉、飽滿有力。
+                               </p>
+                               <p>若遇豆子品項不足，將以同等級或以上品項替代</p>
+                         </div>
+                    </div>
+                </div> 
+                                <section class="mb-8">
+                    <div class="text-center">
+                        <img src="/icon/drip2026-spring/dm1.png"
+                            class="w-full h-auto object-contain rounded-xl shadow-lg border-2 border-gray-100 transition-transform duration-300 hover:scale-[1.02]"
+                        >
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <img src="/icon/drip2026-spring/dm2.png"
+                            class="w-full h-auto object-contain rounded-xl shadow-lg border-2 border-gray-100 transition-transform duration-300 hover:scale-[1.02]"
+                        >
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <img src="/icon/drip2026-spring/dm3.png"
+                            class="w-full h-auto object-contain rounded-xl shadow-lg border-2 border-gray-100 transition-transform duration-300 hover:scale-[1.02]"
+                        >
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <img src="/icon/drip2026-spring/dm4.png"
+                            class="w-full h-auto object-contain rounded-xl shadow-lg border-2 border-gray-100 transition-transform duration-300 hover:scale-[1.02]"
+                        >
+                    </div>
+                </section> 
+                
+                <br>
+               
+                
+                
+            </div>
+            
+        </div>
+    </main>
+    
+    <footer class="text-center py-6 text-gray-500 text-sm">
+        <p>&copy; ATEMPO Coffee All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
