@@ -375,7 +375,9 @@
         </div>
 
         <!-- 立即預訂區塊 (Line Pre-order) -->
-        <section class="cta-gradient text-white rounded-[3rem] p-12 md:p-24 text-center shadow-2xl border border-amber-900/30 relative overflow-hidden">
+        <!-- 最終預訂區塊 (整合 Line 與 Google Form) -->
+                  <!-- 最終預訂區塊 (整合 Line 與 Google Form) -->
+        <section id="reserve" class="cta-gradient text-white rounded-[3rem] p-12 md:p-24 text-center shadow-2xl border border-amber-900/30 relative overflow-hidden">
             <!-- 裝飾光影 -->
             <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
                 <div class="absolute -top-48 -left-48 w-[40rem] h-[40rem] bg-amber-600 rounded-full blur-[120px]"></div>
@@ -384,39 +386,46 @@
 
             <div class="relative z-10 flex flex-col items-center">
                 <h3 class="product-title text-4xl md:text-6xl mb-8 tracking-tighter text-amber-400">
-                    立即至官方 Line 預訂
+                    極致鑑賞・限定預購
                 </h3>
                 <p class="text-xl md:text-2xl text-stone-400 mb-16 max-w-3xl mx-auto leading-relaxed font-light">
-                    精品批次庫存極為有限。掃描下方行動條碼或點擊連結，<br class="hidden md:block">由 ATempo Coffee 私人顧問為您處理預訂事宜。
+                    精品批次庫存極為有限。您可以透過 Google 表單直接預訂，<br class="hidden md:block">或加入 Line 由私人口味顧問為您服務。
                 </p>
                 
-                <div class="flex flex-col md:flex-row items-center justify-center gap-16">
-                    <!-- QR Code 容器 -->
-                    <div class="group relative">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-amber-600 to-amber-900 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative bg-white p-6 rounded-[2rem] shadow-2xl">
-                            <img src="https://qr-official.line.me/gs/M_495yquzy_GW.png?oat_content=qr" alt="官方 LINE QRCode" class="w-48 h-48 md:w-56 md:h-56">
-                        </div>
-                        <p class="mt-4 text-stone-500 text-sm font-medium tracking-[0.2em] uppercase">Scan to Message</p>
-                    </div>
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-12 w-full max-w-5xl">
                     
-                    <div class="flex flex-col items-center md:items-start gap-8">
-                        <div class="space-y-4">
-                            <a href="https://lin.ee/rDBEt94" target="_blank" 
-                               class="inline-flex items-center gap-4 px-12 py-6 bg-amber-600 hover:bg-amber-500 text-white text-3xl font-black rounded-2xl transition-all shadow-xl shadow-amber-900/40 active:scale-95 group">
-                                <i data-lucide="message-circle" class="w-8 h-8 group-hover:rotate-12 transition-transform"></i> 
-                                點擊加入官方 Line
-                            </a>
+                    <!-- Line 預訂方式 -->
+                    <div class="flex-1 flex flex-col items-center gap-6 bg-white/5 p-10 rounded-[2.5rem] border border-white/10 w-full">
+                        <div class="bg-white p-4 rounded-2xl shadow-xl mb-4">
+                            <img src="https://qr-official.line.me/gs/M_495yquzy_GW.png?oat_content=qr" alt="官方 LINE QRCode" class="w-40 h-40">
                         </div>
-                        <div class="flex items-center gap-3 text-stone-500">
-                            <div class="w-12 h-[1px] bg-stone-700"></div>
-                            <span class="text-sm tracking-[0.3em] font-medium">OFFICIAL CHANNEL</span>
-                            <div class="w-12 h-[1px] bg-stone-700"></div>
-                        </div>
+                        <a href="https://lin.ee/rDBEt94" target="_blank" 
+                           class="w-full inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#06C755] hover:bg-[#05b34d] text-white text-2xl font-black rounded-2xl transition-all shadow-lg active:scale-95">
+                            <i data-lucide="message-circle" class="w-7 h-7"></i> 
+                            LINE 私人預訂
+                        </a>
+                        <p class="text-stone-500 text-base tracking-widest uppercase font-bold">顧問一對一服務</p>
                     </div>
+
+                    <div class="text-stone-600 font-serif italic text-2xl hidden lg:block">OR</div>
+
+                    <!-- Google 表單預訂方式 -->
+                    <div class="flex-1 flex flex-col items-center gap-6 bg-white/5 p-10 rounded-[2.5rem] border border-white/10 w-full">
+                        <div class="w-40 h-40 flex items-center justify-center bg-amber-600/20 rounded-full mb-4">
+                            <i data-lucide="file-text" class="w-20 h-20 text-amber-400"></i>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCaF1og0UuqEKqcEJESI-kTd4-zMjU4VUVzsyw-oYdoI74NQ/viewform" target="_blank" 
+                           class="w-full inline-flex items-center justify-center gap-3 px-8 py-5 bg-amber-700 hover:bg-amber-700 text-white text-2xl font-black rounded-2xl transition-all shadow-lg active:scale-95">
+                            <i data-lucide="clipboard-list" class="w-7 h-7"></i> 
+                            填寫表單預訂
+                        </a>
+                        <p class="text-stone-500 text-base tracking-widest uppercase font-bold">快速完成訂單登記</p>
+                    </div>
+
                 </div>
             </div>
         </section>
+
 
     </main>
 
