@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATempo Coffee 2026 新春開工特輯 - 精品咖啡應援</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- 引用 utils.js 以執行 loadComponent -->
+    <script src="/common/js/utils.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #a16207; /* 琥珀金色 */
+            --color-secondary: #1f2937; /* 深石板灰 */
+            --color-background: #f5f5f4; /* stone-100 */
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: #292524;
+            scroll-behavior: smooth;
+        }
+
+        .product-title {
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: -0.01em;
+            font-weight: 900;
+        }
+
+        .tag-style {
+            color: white;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .section-header {
+            border-left: 4px solid var(--color-primary);
+            padding-left: 12px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+        }
+
+        .vip-box {
+            background-color: rgba(161, 98, 7, 0.05);
+            border: 1px solid rgba(161, 98, 7, 0.1);
+        }
+
+        .promo-banner {
+            background: linear-gradient(135deg, #a16207 0%, #78350f 100%);
+        }
+
+        .cta-gradient {
+            background: linear-gradient(to bottom right, #1c1917, #292524);
+        }
+
+        .badge-new {
+            background: #b91c1c;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- 頂端列改為共用，佔位符 -->
+    <div id="header-placeholder"></div>
+
+    <!-- 主視覺 Banner -->
+    <header class="relative bg-stone-900 py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+             <div class="absolute top-0 right-0 w-96 h-96 bg-amber-600 rounded-full blur-[100px]"></div>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+            <span class="text-amber-500 font-bold tracking-[0.4em] uppercase mb-4 block">Spring 2026 Collection</span>
+            <h1 class="product-title text-5xl md:text-8xl text-white mb-8">開工咖啡 我挺你</h1>
+            <p class="text-stone-400 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
+                用精品咖啡開啟新的一年。ATempo Coffee 為您準備了世界冠軍選豆與精品濾掛，助您在開工之際，找回專注與靈感。
+            </p>
+        </div>
+    </header>
+
+    <!-- 優惠活動一：咖啡豆 -->
+    <section id="beans" class="max-w-6xl mx-auto px-6 py-20">
+        <!-- 優惠宣告 -->
+        <div class="promo-banner rounded-[3rem] p-8 md:p-12 text-white mb-20 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="flex-1">
+                <h2 class="text-3xl md:text-4xl font-black mb-4 flex items-center gap-3">
+                    <i data-lucide="sparkles"></i> 優惠一：開工豆應援
+                </h2>
+                <p class="text-amber-100 text-xl font-medium">任選 2 包免運，再加贈「精品濾掛 2 包」</p>
+            </div>
+            <div class="text-amber-900 bg-amber-200/90 px-8 py-4 rounded-2xl font-black text-2xl">
+                2025 新產季限量
+            </div>
+        </div>
+
+        <div class="space-y-32">
+            
+            <!-- 豆款 1：BergWu -->
+            <div class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden p-8 md:p-16 info-card border border-stone-100">
+                <header class="mb-12">
+                    <div class="flex items-center gap-3 mb-8">
+                        <span class="text-amber-700 text-sm font-bold tracking-[0.3em] uppercase">Champion's Selection</span>
+                        <div class="h-[1px] flex-1 bg-stone-100"></div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-10">
+                        <div class="flex-1">
+                            <h2 class="product-title text-4xl md:text-6xl font-black mb-6 leading-tight text-stone-900">
+                                世界冠軍 BergWu 特選系列<br>衣索比亞 古吉 日曬
+                            </h2>
+                            <p class="text-2xl font-light text-stone-500 italic">
+                                Berg Wu Selection: Ethiopia Guji Natural Lot. S25/02 
+                            </p>
+                        </div>
+                        
+                        <div class="md:text-right bg-stone-900 text-white p-8 rounded-[2rem] shadow-2xl min-w-[320px]">
+                            <p class="text-lg text-stone-400 line-through mb-1">行情價: TWD 550</p>
+                            <p class="text-amber-400 flex items-baseline md:justify-end gap-2">
+                                <span class="text-xl font-bold">應援價:</span>
+                                <span class="text-5xl font-black">500</span>
+                            </p>
+                            <p class="text-lg text-amber-200/90 mt-4 tracking-widest uppercase font-bold">規格：半磅 (約 227g)</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="flex flex-wrap gap-3 mb-12">
+                    <span class="tag-style" style="background-color: #d4a373;">淺烘</span>
+                    <span class="tag-style" style="background-color: var(--color-primary);">S25/02 批次</span>
+                    <span class="tag-style" style="background-color: var(--color-secondary);">G1 最高等級</span>
+                    <span class="tag-style" style="background-color: #ef4444;">職人日曬</span>
+                </div>
+
+                <div class="prose prose-stone prose-lg max-w-none text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl text-stone-800 font-semibold border-l-4 border-amber-600 pl-6 py-2">
+                        「這支豆子不僅是古吉產區的縮影，更是 2016 WBC 世界冠軍對極致乾淨度的定義。」
+                    </p>
+                    <p>
+                        在衣索比亞古吉產區，每一年的新產季都是一場風味的競賽。本批次 <b>S25/02</b> 來自高海拔的日曬處理廠，由世界冠軍 <b>Berg Wu (吳則霖)</b> 親自把關挑選。其特色在於將傳統日曬豆那種野性與發酵感，精煉成了如絲綢般柔滑且極度純淨的水果調性。
+                    </p>
+                    <p>
+                        當熱氣升騰時，濃郁的<b>草莓、水蜜桃與佛手柑</b>香氣撲鼻而來，這並非單一的果香，而是一種層疊的感官體驗。隨著溫度的推移，口腔中會充滿草莓果醬般的厚實甜感，緊接著是水蜜桃果凍的滑順質地。
+                    </p>
+                    <p>
+                        最令人驚豔的是其尾韻，帶有一種悠長且清新的茉莉花芬芳。這代表了漿果在採收與日曬過程中，經歷了極致緩慢且精確的控溫，保留了最脆弱而優雅的芳香物質。
+                    </p>
+                </div>
+
+                <div class="vip-box rounded-[2rem] p-10 mb-16 shadow-inner">
+                    <h4 class="text-xl font-bold mb-6 flex items-center gap-2 text-amber-900 uppercase tracking-widest">
+                        <i data-lucide="user-check" class="w-6 h-6"></i> 適合這樣的你
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">01</div>
+                            <p class="text-stone-700 leading-relaxed">信賴專業職人眼光，希望體驗 WBC 世界冠軍親自選豆標竿的精品迷。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">02</div>
+                            <p class="text-stone-700 leading-relaxed">追求高乾淨度日曬調性，喜愛飽滿草莓果醬與果凍甜感層次的您。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">03</div>
+                            <p class="text-stone-700 leading-relaxed">特別喜愛「茉莉花香」餘韻，重視咖啡在喉韻間優雅延展性的品鑑者。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-stone-100">
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800 text-stone-800">產區深度資訊</h3>
+                        <ul class="space-y-4 text-2xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>衣索比亞 古吉</li>
+                            <li><span class="font-semibold text-stone-800">特選職人：</span>2016 WBC 冠軍 吳則霖</li>
+                            <li><span class="font-semibold text-stone-800">批次代號：</span>S25/02 G1</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>日曬</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">感官風味筆記</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-pink-100 text-pink-800 rounded-xl text-sm font-bold">草莓果醬 & 水蜜桃</span>
+                            <span class="px-4 py-2 bg-amber-100 text-amber-800 rounded-xl text-sm font-bold">佛手柑 & 柚子皮</span>
+                            <span class="px-4 py-2 bg-stone-100 text-stone-800 rounded-xl text-sm font-bold">悠長茉莉香氣</span>
+                        </div>
+                        <p class="text-2xl text-stone-600 leading-relaxed">
+                            一入口同樣可感受到草莓果醬、水蜜桃果凍風味，伴隨著清新的柚子皮、佛手柑與茉莉芬芳。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- 豆款 2：桃子甜心 -->
+            <div class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden p-8 md:p-16 info-card border border-stone-100">
+                <header class="mb-12">
+                    <div class="flex items-center gap-3 mb-8">
+                        <span class="text-amber-700 text-sm font-bold tracking-[0.3em] uppercase">Twakok Selection</span>
+                        <div class="h-[1px] flex-1 bg-stone-100"></div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-10">
+                        <div class="flex-1">
+                            <h2 class="product-title text-4xl md:text-6xl font-black mb-6 leading-tight text-stone-900">
+                                衣索比亞 日曬 西達摩<br>桃子甜心 / 桃可可
+                            </h2>
+                            <p class="text-2xl font-light text-stone-500 italic">
+                                Ethiopia Natural Sidamo Twakok G1 Lot 25/02
+                            </p>
+                        </div>
+                        
+                        <div class="md:text-right bg-stone-900 text-white p-8 rounded-[2rem] shadow-2xl min-w-[320px]">
+                            <p class="text-lg text-stone-400 line-through mb-1">行情價: TWD 450</p>
+                            <p class="text-amber-400 flex items-baseline md:justify-end gap-2">
+                                <span class="text-xl font-bold">應援價:</span>
+                                <span class="text-5xl font-black">380</span>
+                            </p>
+                            <p class="text-lg text-amber-200/90 mt-4 tracking-widest uppercase font-bold">規格：半磅 (約 227g)</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="flex flex-wrap gap-3 mb-12">
+                    <span class="tag-style" style="background-color: #d4a373;">淺烘</span>
+                    <span class="tag-style" style="background-color: #ec4899;">香甜可爾必思</span>
+                    <span class="tag-style" style="background-color: var(--color-secondary);">G1 最高等級</span>
+                    <span class="tag-style" style="background-color: #f59e0b;">100% 古優原生種</span>
+                </div>
+
+                <div class="prose prose-stone prose-lg max-w-none text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl text-stone-800 font-semibold border-l-4 border-amber-600 pl-6 py-2">
+                        「沐浴於西達摩高地豔陽下的蜜桃甜心，交織草莓與玫瑰的甜美果汁派對。」
+                    </p>
+                    <p>
+                        <b>「桃子甜心/桃可可」（Twakok）</b>這個令人垂涎的名字，源自衣索比亞當地語言，「Tafac」代表甜蜜，而「Kok」則是水蜜桃，合在一起即是「甜蜜的水蜜桃」。這款生豆來自近年在卓越杯（COE）競賽中大放異彩的西達摩（Sidama）產區。
+                    </p>
+                    <p>
+                        此 25/02 批次獲評為衣索比亞分級制度中最高等級的 <b>Grade 1 (G1)</b>。採用最傳統且講究的日曬處理法，飽滿的咖啡果實在非洲高架床上經歷漫長的陽光曝曬，完美吸收了果肉與果膠的精華風味，造就出如糖漿般滑順多汁的口感。
+                    </p>
+                    <p>
+                        啜吸入口時，滿溢著<b>草莓果醬、水蜜桃可爾必思與荔枝果凍</b>的甜美主調，中後段更伴隨著優雅的佛手柑、橙花及輕盈的玫瑰花香。多層次且飽滿多汁的口感，絕對是喜愛非洲豆明亮甜美風味的極佳選擇。
+                    </p>
+                </div>
+
+                <div class="vip-box rounded-[2rem] p-10 mb-16">
+                    <h4 class="text-xl font-bold mb-6 flex items-center gap-2 text-amber-900 uppercase tracking-widest">
+                        <i data-lucide="user-check" class="w-6 h-6"></i> 適合這樣的你
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">01</div>
+                            <p class="text-stone-700 leading-relaxed">追求如「初戀般」極致甜美感，喜愛乳酸與桃子果凍交織層次的精品迷。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">02</div>
+                            <p class="text-stone-700 leading-relaxed">喜愛荔枝與玫瑰的高雅香調，對咖啡風味的「甜感飽滿度」有極高要求的您。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">03</div>
+                            <p class="text-stone-700 leading-relaxed">重視性價比與產區經典地位，希望收藏西達摩產區標竿風味的咖啡探索家。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-stone-100">
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">產區深度資訊</h3>
+                        <ul class="space-y-4 text-2xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>衣索比亞 西達摩</li>
+                            <li><span class="font-semibold text-stone-800">海拔高度：</span>極限 2,000 公尺以上</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>G1 最高等級 傳統日曬</li>
+                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>Heirloom 原生種</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">感官風味筆記</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-xl text-sm font-bold">草莓果醬 & 水蜜桃</span>
+                            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-xl text-sm font-bold">荔枝果凍 & 檸檬皮</span>
+                            <span class="px-4 py-2 bg-pink-100 text-pink-800 rounded-xl text-sm font-bold">佛手柑 & 橙花玫瑰</span>
+                        </div>
+                        <p class="text-2xl text-stone-600 leading-relaxed">
+                            香甜的草莓、水蜜桃、檸檬皮及可爾必思香氣，甜美飽滿，層次感豐富多變。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- 豆款 3：波塔巴/尼羅河花園 -->
+            <div class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden p-8 md:p-16 info-card border border-stone-100">
+                <header class="mb-12">
+                    <div class="flex items-center gap-3 mb-8">
+                        <span class="text-amber-700 text-sm font-bold tracking-[0.3em] uppercase">Botabaa Garden</span>
+                        <div class="h-[1px] flex-1 bg-stone-100"></div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-10">
+                        <div class="flex-1">
+                            <h2 class="product-title text-4xl md:text-6xl font-black mb-6 leading-tight text-stone-900">
+                                衣索比亞 水洗 耶珈雪啡<br>波塔巴 / 尼羅河花園
+                            </h2>
+                            <p class="text-2xl font-light text-stone-500 italic">
+                                Ethiopia Washed Yirgacheffe Botabaa G1 Lot 25/02
+                            </p>
+                        </div>
+                        
+                        <div class="md:text-right bg-stone-900 text-white p-8 rounded-[2rem] shadow-2xl min-w-[320px]">
+                            <p class="text-lg text-stone-400 line-through mb-1">行情價: TWD 500-600</p>
+                            <p class="text-amber-400 flex items-baseline md:justify-end gap-2">
+                                <span class="text-xl font-bold">應援價:</span>
+                                <span class="text-5xl font-black">450</span>
+                            </p>
+                            <p class="text-lg text-amber-200/90 mt-4 tracking-widest uppercase font-bold">規格：半磅 (約 227g)</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="flex flex-wrap gap-3 mb-12">
+                    <span class="tag-style" style="background-color: #d4a373;">淺烘</span>
+                    <span class="tag-style" style="background-color: #3b82f6;">清新白花</span>
+                    <span class="tag-style" style="background-color: var(--color-secondary);">精緻水洗</span>
+                    <span class="tag-style" style="background-color: #10b981;">尼羅河源頭</span>
+                </div>
+
+                <div class="prose prose-stone prose-lg max-w-none text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl text-stone-800 font-semibold border-l-4 border-amber-600 pl-6 py-2">
+                        「尋源尼羅河的繁花秘境，極致水洗淬鍊出的白桃與梔子花香頌。」
+                    </p>
+                    <p>
+                        這支名為<b>「波塔巴（Botabaa）」</b>的豆子，其命名源於當地語言「Ababa Bota」，意思是「花園」。嚴選的咖啡櫻桃在脫去果肉後，會進入水洗槽中進行 12 至 48 小時的發酵，賦予了咖啡豆極致乾淨透亮的晶瑩口感。
+                    </p>
+                    <p>
+                        在我們精心呈現的 25/02 最新批次中，波塔巴展現了令人驚豔的甜美細緻度。乾香即散發著誘人的<b>荔枝與白桃</b>甜香。一入口，檸檬皮的清爽、荔枝的甜美與水蜜桃可爾必思的絲滑風味完美交織。
+                    </p>
+                    <p>
+                        隨後，<b>柚子茶、佛手柑與梔子花</b>的幽香在唇齒間層層綻放。這是一杯層次分明、甜感細膩，宛如漫步於衣索比亞春日花園中的感官盛宴。
+                    </p>
+                </div>
+
+                <div class="vip-box rounded-[2rem] p-10 mb-16">
+                    <h4 class="text-xl font-bold mb-6 flex items-center gap-2 text-amber-900 uppercase tracking-widest">
+                        <i data-lucide="user-check" class="w-6 h-6"></i> 適合這樣的你
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">01</div>
+                            <p class="text-stone-700 leading-relaxed">喜愛明亮柑橘、白葡萄與細膩花果香調性，追求清新優雅風格的您。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">02</div>
+                            <p class="text-stone-700 leading-relaxed">偏好極高透明度（Transparency）與水洗純淨感的資深精品迷。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">03</div>
+                            <p class="text-stone-700 leading-relaxed">需要在清晨保持清醒，追求「如清泉般」無負擔口感的日常飲用者。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-stone-100">
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">產區深度資訊</h3>
+                        <ul class="space-y-4 text-2xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>耶珈雪啡 (科契爾)</li>
+                            <li><span class="font-semibold text-stone-800">海拔高度：</span>1,900 - 2,200 公尺</li>
+                            <li><span class="font-semibold text-stone-800">處理工法：</span>水洗處理法</li>
+                            <li><span class="font-semibold text-stone-800">批次代號：</span>G1 25/02 批次</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">感官風味筆記</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-xl text-sm font-bold">香甜荔枝 & 白桃</span>
+                            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-xl text-sm font-bold">水蜜桃可爾必思</span>
+                            <span class="px-4 py-2 bg-stone-100 text-stone-800 rounded-xl text-sm font-bold">柚子茶 & 梔子花</span>
+                        </div>
+                        <p class="text-2xl text-stone-600 leading-relaxed">
+                            一入口即可感受到檸檬皮、荔枝風味，隨後浮現佛手柑與梔子花香，風味甜美細緻。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- 豆款 4：玻利維亞 美人莊園 -->
+            <div class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden p-8 md:p-16 info-card border border-stone-100">
+                <header class="mb-12">
+                    <div class="flex items-center gap-3 mb-8">
+                        <span class="text-amber-700 text-sm font-bold tracking-[0.3em] uppercase">Bolivian Renaissance</span>
+                        <div class="h-[1px] flex-1 bg-stone-100"></div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-10">
+                        <div class="flex-1">
+                            <h2 class="product-title text-4xl md:text-6xl font-black mb-6 leading-tight text-stone-900">
+                                玻利維亞 美人莊園<br>卡杜拉 水洗處理
+                            </h2>
+                            <p class="text-2xl font-light text-stone-500 italic">
+                                Bolivia Caranavi La Linda Caturra Traditional Washed Lot.6
+                            </p>
+                        </div>
+                        
+                        <div class="md:text-right bg-stone-900 text-white p-8 rounded-[2rem] shadow-2xl min-w-[320px]">
+                            <p class="text-lg text-stone-400 line-through mb-1">行情價: TWD 420-450</p>
+                            <p class="text-amber-400 flex items-baseline md:justify-end gap-2">
+                                <span class="text-xl font-bold">應援價:</span>
+                                <span class="text-5xl font-black">380</span>
+                            </p>
+                            <p class="text-lg text-amber-200/90 mt-4 tracking-widest uppercase font-bold">規格：半磅 (約 227g)</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="flex flex-wrap gap-3 mb-12">
+                    <span class="tag-style" style="background-color: #8c7851;">淺中烘</span>
+                    <span class="tag-style" style="background-color: #d97706;">紅茶茶韻</span>
+                    <span class="tag-style" style="background-color: var(--color-secondary);">明日太陽計畫</span>
+                    <span class="tag-style" style="background-color: #4b5563;">安地斯秘境</span>
+                </div>
+
+                <div class="prose prose-stone prose-lg max-w-none text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl text-stone-800 font-semibold border-l-4 border-amber-600 pl-6 py-2">
+                        「孕育於雲霧繚繞的安地斯秘境，見證玻利維亞咖啡復興的純淨之味。」
+                    </p>
+                    <p>
+                        <b>美人莊園（Finca La Linda）</b>的誕生，是玻利維亞咖啡復興的起點。由羅德里格斯家族於卡拉納比產區設立，這裡海拔陡峭、雲霧繚繞，擁有超過 90% 的天然原始森林覆蓋，環境極其純淨。
+                    </p>
+                    <p>
+                        這款咖啡採用精確的傳統水洗處理法，完美展現了<b>卡杜拉（Caturra）</b>品種標誌性的明亮乾淨度。入口即可感受到明亮多汁的酸甜層次，清新的<b>橘皮、柚子與葡萄柚</b>的柑橘調性率先綻放。
+                    </p>
+                    <p>
+                        中段伴隨著<b>黑莓與青蘋果</b>的果香，尾韻則帶有蜂蜜的甜感與優雅悠長的<b>紅茶香氣</b>。整體口感極其乾淨、酸甜平衡，將安地斯高海拔風土純淨度發揮到極致。
+                    </p>
+                </div>
+
+                <div class="vip-box rounded-[2rem] p-10 mb-16">
+                    <h4 class="text-xl font-bold mb-6 flex items-center gap-2 text-amber-900 uppercase tracking-widest">
+                        <i data-lucide="user-check" class="w-6 h-6"></i> 適合這樣的你
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">01</div>
+                            <p class="text-stone-700 leading-relaxed">重視沖煮過程中溫度的動態層次，享受從熱到冷不同階段風味變換的樂趣。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">02</div>
+                            <p class="text-stone-700 leading-relaxed">喜愛明亮多汁的黑莓調性，並對於「紅茶感」尾韻情有獨鍾的品鑑者。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-amber-600 font-serif text-3xl">03</div>
+                            <p class="text-stone-700 leading-relaxed">對安地斯山脈產區風土充滿好奇，想在非洲豆之外尋找更高純淨度的探索家。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-stone-100">
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">產區深度資訊</h3>
+                        <ul class="space-y-4 text-2xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>玻利維亞 北永加斯</li>
+                            <li><span class="font-semibold text-stone-800">生產莊園：</span>美人莊園 (Rodriguez)</li>
+                            <li><span class="font-semibold text-stone-800">海拔高度：</span>1,450 - 1,550 公尺</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>傳統水洗</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">感官風味筆記</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-xl text-sm font-bold">葡萄柚 & 黑莓</span>
+                            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-xl text-sm font-bold">橘皮 & 青蘋果</span>
+                            <span class="px-4 py-2 bg-stone-100 text-stone-800 rounded-xl text-sm font-bold">蜂蜜 & 紅茶香</span>
+                        </div>
+                        <p class="text-2xl text-stone-600 leading-relaxed">
+                            乾香可感受到柑橘與紅茶香氣。風味乾淨、明亮多汁，整體酸甜平衡感優異。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 優惠活動二：精品濾掛自由選 -->
+    <section id="drip" class="bg-stone-100 py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <header class="text-center mb-16">
+                <h2 class="product-title text-4xl md:text-5xl text-stone-900 mb-6">優惠二：精品濾掛自由選</h2>
+                <div class="inline-block bg-white border border-amber-500 rounded-[2rem] p-10 shadow-xl max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+                        <div class="text-left">
+                            <p class="text-amber-800 text-3xl font-black mb-2">單包 $40</p>
+                            <p class="text-stone-600 text-xl font-bold">任選 <span class="text-amber-600">10 送 2</span> / <span class="text-amber-600">15 送 3</span></p>
+                        </div>
+                        <div class="text-stone-500 text-sm font-medium italic border-l border-stone-200 pl-8">
+                            <i data-lucide="truck" class="inline-block w-4 h-4 mr-1"></i> 滿 15 包即享免運
+                        </div>
+                    </div>
+                    
+                    <div class="vip-box rounded-[1.5rem] p-8 text-left">
+                        <h4 class="text-amber-900 font-bold mb-6 flex items-center gap-2 tracking-widest uppercase">
+                            <i data-lucide="user-check" class="w-5 h-5"></i> 適合這樣的你
+                        </h4>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="flex gap-3">
+                                <div class="text-amber-600 font-serif text-2xl">01</div>
+                                <p class="text-stone-600 text-sm leading-relaxed">辦公室開工應援，需要在繁忙工作中快速找回專注力的您。</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="text-amber-600 font-serif text-2xl">02</div>
+                                <p class="text-stone-600 text-sm leading-relaxed">差旅頻繁，希望在異地旅途中隨時優雅享有高品質手沖感的行動派。</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="text-amber-600 font-serif text-2xl">03</div>
+                                <p class="text-stone-600 text-sm leading-relaxed">想在短時間內品嚐多款產區豆，享受風味自由混搭樂趣的精品愛好者。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+                <!-- 濾掛項目 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 flex items-center gap-4">
+                    <div class="bg-amber-100 p-3 rounded-xl"><i data-lucide="package" class="text-amber-700"></i></div>
+                    <p class="font-bold text-stone-800">BergWu 古吉 日曬</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 flex items-center gap-4">
+                    <div class="bg-pink-100 p-3 rounded-xl"><i data-lucide="package" class="text-pink-700"></i></div>
+                    <p class="font-bold text-stone-800">桃子甜心 / 桃可可</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 flex items-center gap-4">
+                    <div class="bg-blue-100 p-3 rounded-xl"><i data-lucide="package" class="text-blue-700"></i></div>
+                    <p class="font-bold text-stone-800">卡法森林 金寶藝伎</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 flex items-center gap-4">
+                    <div class="bg-stone-100 p-3 rounded-xl"><i data-lucide="package" class="text-stone-700"></i></div>
+                    <p class="font-bold text-stone-800">迦佑山脈 王者曼特寧</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 flex items-center gap-4">
+                    <div class="bg-red-100 p-3 rounded-xl"><i data-lucide="package" class="text-red-700"></i></div>
+                    <p class="font-bold text-stone-800">神燈 南希寶 莓姬</p>
+                </div>
+            </div>
+            
+            <p class="text-center text-stone-500 text-sm">＊濾掛優惠不含禮盒，禮盒需求請另洽官方 Line</p>
+        </div>
+    </section>
+
+    <!-- 預訂區塊 -->
+    <section id="reserve" class="cta-gradient text-white rounded-[4rem] mx-6 my-24 p-12 md:p-24 text-center shadow-2xl relative overflow-hidden">
+        <div class="relative z-10 flex flex-col items-center">
+            <h3 class="product-title text-4xl md:text-7xl mb-12 tracking-tighter text-amber-400 text-center leading-tight">
+                新春・開工預購
+            </h3>
+            <div class="w-full max-w-2xl mx-auto">
+                <div class="flex flex-col items-center gap-10 bg-white/5 p-12 md:p-20 rounded-[3rem] border border-white/10 w-full shadow-2xl backdrop-blur-sm">
+                    <!-- QR Code 展示 -->
+                    <div class="bg-white p-5 rounded-[2.5rem] shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://qr-official.line.me/gs/M_495yquzy_GW.png?oat_content=qr" alt="官方 LINE QRCode" class="w-48 h-48 md:w-64 md:h-64">
+                    </div>
+                    
+                    <!-- LINE 預訂按鈕 -->
+                    <div class="w-full space-y-8">
+                        <a href="https://lin.ee/rDBEt94" target="_blank" class="w-full inline-flex items-center justify-center gap-4 px-10 py-7 bg-[#06C755] hover:bg-[#05b34d] text-white text-2xl md:text-4xl font-black rounded-[2.5rem] transition-all shadow-xl active:scale-95 group">
+                            <i data-lucide="message-circle" class="w-10 h-10 group-hover:rotate-12 transition-transform"></i> 
+                            官方 LINE 預訂
+                        </a>
+                        
+                        <!-- 說明文字 -->
+                        <div class="bg-amber-500/10 border border-amber-500/20 py-6 px-8 rounded-3xl">
+                            <p class="text-amber-400 text-xl md:text-2xl font-bold tracking-wide">
+                                <i data-lucide="info" class="inline-block w-6 h-6 mr-2 mb-1"></i>
+                                確認後會提供 7-11 賣場連結下單
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-stone-400 text-base tracking-[0.5em] uppercase font-bold opacity-40">ATEMPO COFFEE OFFICIAL SERVICE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-24 text-stone-500 text-base border-t border-stone-200 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-center gap-3 font-bold text-2xl text-stone-800 mb-6">
+                <i data-lucide="coffee" class="text-amber-700"></i> ATempo Coffee
+            </div>
+            <p>&copy; 2026 ATempo Coffee All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 頁面載入後，執行 loadComponent 來載入共用標頭
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.loadComponent) {
+                window.loadComponent('/common/header-component.html', 'header-placeholder');
+            } else {
+                console.error('loadComponent function not found. Make sure utils.js is loaded correctly.');
+            }
+            // 延遲初始化圖示以確保組件載入完成
+            setTimeout(() => {
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
