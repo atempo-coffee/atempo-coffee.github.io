@@ -87,6 +87,19 @@
             background-color: rgba(232, 122, 144, 0.05);
             border: 1px solid rgba(232, 122, 144, 0.1);
         }
+
+        /* 節省價格標籤樣式 */
+        .save-badge {
+            background-color: #E87A90;
+            color: white;
+            font-size: 0.85rem;
+            padding: 2px 10px;
+            border-radius: 8px;
+            font-weight: 800;
+            margin-left: 8px;
+            display: inline-flex;
+            align-items: center;
+        }
     </style>
 </head>
 <body class="min-h-screen sakura-dream-bg">
@@ -102,7 +115,7 @@
         </div>
         <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
             <span class="text-pink-400 font-bold tracking-[0.6em] uppercase mb-6 block text-sm">Spring 2026 Sakura Edition</span>
-            <h1 class="product-title text-5xl md:text-8xl mb-8">醒在香氣綻放時</h1>
+            <h1 class="product-title text-5xl md:text-8xl mb-8 text-[#4A3E42]">醒在香氣綻放時</h1>
             <p class="text-zinc-500 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
                 春天的氣息，不該只在窗外，更應在您的杯中綻放。<br>
                 精選三款風格獨特的精品豆，邀您開啟一場跨越產區的春日味覺旅行。
@@ -114,7 +127,7 @@
     <section id="beans" class="max-w-6xl mx-auto px-6 py-20">
         <div class="promo-banner rounded-[3rem] p-8 md:p-12 shadow-sm mb-20 flex flex-col md:flex-row items-center justify-between gap-8 border border-white">
             <div class="flex-1 text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-black mb-4 flex items-center justify-center md:justify-start gap-3">
+                <h2 class="text-3xl md:text-4xl font-black mb-4 flex items-center justify-center md:justify-start gap-3 text-[#4A3E42]">
                     <i data-lucide="flower-2" class="text-white"></i> 春日櫻花季限定組
                 </h2>
                 <p class="text-rose-900/70 text-2xl font-medium">三款精品豆（各半磅）組合優惠價 TWD 1,399</p>
@@ -139,7 +152,7 @@
                             <h2 class="product-title text-4xl md:text-6xl mb-4 leading-tight text-stone-900">
                                 哥倫比亞 棕梠樹莊園<br>玫瑰酵母水洗
                             </h2>
-                            <p class="text-2xl font-light text-stone-500  mb-6">
+                            <p class="text-2xl font-light text-stone-500 mb-6 italic">
                                 Colombia Huila Las Palmas - Rose Fun
                             </p>
                             <div class="flex flex-wrap gap-3 mt-6">
@@ -150,17 +163,18 @@
                         </div>
                         <div class="price-box p-8 rounded-[2rem] shadow-lg min-w-[320px] text-right">
                             <p class="text-white/40 line-through mb-1 text-sm">行情價: TWD 850</p>
-                            <p class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
+                            <div class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
                                 <span class="text-lg">單包活動價：</span>
                                 <span class="text-5xl font-black">750</span>
                                 <span class="text-sm">/ 半磅</span>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </header>
 
-                <div class="prose prose-stone prose-xl max-w-none text-stone-600 leading-relaxed space-y-8 mb-16">
-                    <p class="text-2xl text-rose-800 font-bold border-l-4 border-pink-300 pl-6 py-2">
+                <!-- 內文字體修正：改用 text-xl (20px) 與更寬鬆的行高 -->
+                <div class="text-xl md:text-2xl text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl md:text-3xl text-rose-800 font-bold border-l-8 border-pink-300 pl-6 py-2 italic mb-10">
                         「如蜜桃玫瑰花茶般的極致享受：棕梠樹莊園 Rose Fun，帶您體驗草莓醬與蜜香堆疊的驚艷饗宴。」
                     </p>
                     <p>
@@ -180,29 +194,28 @@
                     </h4>
                     <div class="grid md:grid-cols-3 gap-10">
                         <div class="flex gap-4">
-                            <div class="text-pink-300 font-serif text-3xl">01</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">熱衷探索前衛處理法，渴望體驗玫瑰酵母與咖啡豆完美共生風味的精品探索家。</p>
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">01</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">熱衷探索前衛處理法，渴望體驗玫瑰酵母與咖啡豆完美共生風味的精品探索家。</p>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-pink-300 font-serif text-3xl">02</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">追求如「甜點」般的細緻感，喜愛草莓醬與蜜桃輕盈甜味在舌尖交織的您。</p>
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">02</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">追求如「甜點」般的細緻感，喜愛草莓醬與蜜桃輕盈甜味在舌尖交織的您。</p>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-pink-300 font-serif text-3xl">03</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">鍾情於優雅花香餘韻，重視咖啡嚥下後喉間散發出玫瑰花茶與蜜糖清甜的品鑑者。</p>
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">03</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">鍾情於優雅花香餘韻，重視咖啡嚥下後喉間散發出玫瑰花茶與蜜糖清甜的品鑑者。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 產區與風味區塊 (仿範例頁面) -->
                 <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-pink-100">
                     <section>
                         <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">產區深度資訊</h3>
-                        <ul class="space-y-4 text-lg text-stone-600">
+                        <ul class="space-y-4 text-xl text-stone-600">
                             <li><span class="font-semibold text-stone-800">國家產區：</span>哥倫比亞 微拉省 棕梠樹莊園</li>
                             <li><span class="font-semibold text-stone-800">海拔高度：</span>1700 公尺以上</li>
                             <li><span class="font-semibold text-stone-800">咖啡品種：</span>卡杜拉 (Caturra)</li>
-                            <li><span class="font-semibold text-stone-800">處理方式：</span>特殊玫瑰酵母水洗 (Co-fermentation)</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>玫瑰酵母水洗 (Co-fermentation)</li>
                             <li><span class="font-semibold text-stone-800">烘焙度：</span>淺烘焙 ~ 淺中烘焙</li>
                         </ul>
                     </section>
@@ -213,8 +226,8 @@
                             <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-xl text-sm font-bold">草莓果醬</span>
                             <span class="px-4 py-2 bg-stone-100 text-stone-800 rounded-xl text-sm font-bold">蜜桃甜感</span>
                         </div>
-                        <p class="text-lg text-stone-600 leading-relaxed">
-                            乾香具有明顯的玫瑰花與草莓醬香氣。啜吸時滿溢蜜桃甜感，尾韻則是舒服的玫瑰花茶與蜜糖餘韻，結合了優雅花香與果實鮮甜。
+                        <p class="text-xl text-stone-600 leading-relaxed">
+                            乾香具有明顯的玫瑰花與草莓醬香氣。啜吸時滿溢蜜桃甜感，尾韻則是舒服的玫瑰花茶與蜜糖餘韻。
                         </p>
                     </section>
                 </div>
@@ -231,7 +244,7 @@
                             <h2 class="product-title text-4xl md:text-6xl mb-4 leading-tight text-stone-900">
                                 烏干達 嬉皮瀑布<br>傳統水洗 埃爾貢山
                             </h2>
-                            <p class="text-2xl font-light text-stone-500 mb-6">
+                            <p class="text-2xl font-light text-stone-500 mb-6 italic">
                                 Uganda Kapchorwa Sipi Falls - Fully Washed
                             </p>
                             <div class="flex flex-wrap gap-3 mt-6">
@@ -242,17 +255,17 @@
                         </div>
                         <div class="price-box p-8 rounded-[2rem] shadow-lg min-w-[320px] text-right">
                             <p class="text-white/40 line-through mb-1 text-sm">行情價: TWD 550</p>
-                            <p class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
+                            <div class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
                                 <span class="text-lg">單包活動價：</span>
                                 <span class="text-5xl font-black">450</span>
                                 <span class="text-sm">/ 半磅</span>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </header>
 
-                <div class="prose prose-stone prose-xl max-w-none text-stone-600 leading-relaxed space-y-8 mb-16">
-                    <p class="text-2xl text-stone-800 font-bold border-l-4 border-green-200 pl-6 py-2 ">
+                <div class="text-xl md:text-2xl text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl md:text-3xl text-stone-800 font-bold border-l-8 border-green-200 pl-6 py-2 italic mb-10">
                         「春日裡的金色瀑布：嬉皮瀑布 Sipi Falls，邀您體驗梅子與金桔躍動的酸甜雙重奏。」
                     </p>
                     <p>
@@ -272,28 +285,27 @@
                     </h4>
                     <div class="grid md:grid-cols-3 gap-10">
                         <div class="flex gap-4">
-                            <div class="text-stone-300 font-serif text-3xl">01</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">追求清新感的您，想在春日早晨來一杯酸甜平衡、充滿朝氣的咖啡。</p>
+                            <div class="text-stone-300 font-serif text-3xl md:text-4xl">01</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">追求清新感的您，想在春日早晨來一杯酸甜平衡、充滿朝氣的咖啡。</p>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-stone-300 font-serif text-3xl">02</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">重視咖啡乾淨度與水洗處理帶來的清透感，且不希望尾韻單薄無力的精品迷。</p>
+                            <div class="text-stone-300 font-serif text-3xl md:text-4xl">02</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">重視咖啡乾淨度與水洗處理帶來的清透感，且不希望尾韻單薄無力的精品迷。</p>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-stone-300 font-serif text-3xl">03</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">尋找如瀑布般帶來清新體驗，並期待在蜂蜜與巧克力甜感中獲得滿足的探索者。</p>
+                            <div class="text-stone-300 font-serif text-3xl md:text-4xl">03</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">尋找如瀑布般帶來清新體驗，並期待在蜂蜜與巧克力甜感中獲得滿足的探索者。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 產區與風味區塊 (仿範例頁面) -->
                 <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-stone-100">
                     <section>
                         <h3 class="text-2xl font-bold mb-8 section-header text-stone-800" style="border-color: #88B096;">產區深度資訊</h3>
-                        <ul class="space-y-4 text-lg text-stone-600">
-                            <li><span class="font-semibold text-stone-800">國家產區：</span>烏干達 東部 埃爾貢山 嬉皮瀑布</li>
+                        <ul class="space-y-4 text-xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>烏干達 埃爾貢山 嬉皮瀑布</li>
                             <li><span class="font-semibold text-stone-800">海拔高度：</span>1,800 - 2,200 公尺</li>
-                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>SL14, SL28 (肯亞經典品種)</li>
+                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>SL14, SL28</li>
                             <li><span class="font-semibold text-stone-800">處理方式：</span>傳統水洗 (Fully Washed)</li>
                             <li><span class="font-semibold text-stone-800">烘焙度：</span>淺烘焙 ~ 淺中烘焙</li>
                         </ul>
@@ -305,8 +317,8 @@
                             <span class="px-4 py-2 bg-yellow-50 text-yellow-700 rounded-xl text-sm font-bold">蜂蜜香草</span>
                             <span class="px-4 py-2 bg-stone-50 text-stone-700 rounded-xl text-sm font-bold">黑巧克力</span>
                         </div>
-                        <p class="text-lg text-stone-600 leading-relaxed">
-                            乾香展現出清新的金桔皮與酸梅氣息。口感明亮且飽滿乾淨，隨之而來的是溫柔的蜂蜜與香草糖漿甜感，尾韻帶有焦糖與黑巧克力香氣。
+                        <p class="text-xl text-stone-600 leading-relaxed">
+                            乾香展現出清新的金桔皮與酸梅氣息。口感明亮且飽滿乾淨，隨之而來的是溫柔的蜂蜜與香草甜感。
                         </p>
                     </section>
                 </div>
@@ -323,7 +335,7 @@
                             <h2 class="product-title text-4xl md:text-6xl mb-4 leading-tight text-stone-900">
                                 衣索比亞 日曬 西達摩<br>桃子甜心 / 桃可可 G1
                             </h2>
-                            <p class="text-2xl font-light text-stone-500  mb-6">
+                            <p class="text-2xl font-light text-stone-500 mb-6 italic">
                                 Ethiopia Natural Sidamo Twakok G1 Lot 25/02
                             </p>
                             <div class="flex flex-wrap gap-3 mt-6">
@@ -334,17 +346,17 @@
                         </div>
                         <div class="price-box p-8 rounded-[2rem] shadow-lg min-w-[320px] text-right">
                             <p class="text-white/40 line-through mb-1 text-sm">行情價: TWD 450</p>
-                            <p class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
+                            <div class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
                                 <span class="text-lg">單包活動價：</span>
                                 <span class="text-5xl font-black">400</span>
                                 <span class="text-sm">/ 半磅</span>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </header>
 
-                <div class="prose prose-stone prose-xl max-w-none text-stone-600 leading-relaxed space-y-8 mb-16">
-                    <p class="text-2xl text-rose-800 font-bold border-l-4 border-rose-300 pl-6 py-2 ">
+                <div class="text-xl md:text-2xl text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl md:text-3xl text-rose-800 font-bold border-l-8 border-rose-300 pl-6 py-2 italic mb-10">
                         「沐浴於西達摩高地豔陽下的桃子甜心，譜寫風味交織的粉紅果韻詩篇。」
                     </p>
                     <p>
@@ -364,29 +376,28 @@
                     </h4>
                     <div class="grid md:grid-cols-3 gap-10">
                         <div class="flex gap-4">
-                            <div class="text-pink-300 font-serif text-3xl">01</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">追求如「初戀般」甜美感，喜愛乳酸感與桃子果凍交織出豐富層次的精品迷。</p>
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">01</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">追求如「初戀般」甜美感，喜愛乳酸感與桃子果凍交織出豐富層次的精品迷。</p>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-pink-300 font-serif text-3xl">02</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">喜愛荔枝與玫瑰的高雅香調，對風味的「甜感飽滿度」與氣味廣度有極高要求的您。</p>
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">02</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">喜愛荔枝與玫瑰的高雅香調，對風味的「甜感飽滿度」與氣味廣度有極高要求的您。</p>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-pink-300 font-serif text-3xl">03</div>
-                            <p class="text-stone-600 leading-relaxed text-sm">重視產區指標地位，希望細品西達摩產區最火紅、標竿風味的咖啡收藏者。</p>
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">03</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">重視產區指標地位，希望細品西達摩產區最火紅、標竿風味的咖啡收藏者。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 產區與風味區塊 (仿範例頁面) -->
                 <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-pink-100">
                     <section>
                         <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">產區深度資訊</h3>
-                        <ul class="space-y-4 text-lg text-stone-600">
+                        <ul class="space-y-4 text-xl text-stone-600">
                             <li><span class="font-semibold text-stone-800">國家產區：</span>衣索比亞 西達摩 (Sidama)</li>
                             <li><span class="font-semibold text-stone-800">海拔高度：</span>2,000 公尺以上</li>
-                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>阿拉比卡古優原生種 (Heirloom)</li>
-                            <li><span class="font-semibold text-stone-800">處理方式：</span>G1 等級 傳統日曬處理 (Natural)</li>
+                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>古優原生種 (Heirloom)</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>G1 等級 傳統日曬處理</li>
                             <li><span class="font-semibold text-stone-800">烘焙度：</span>淺烘焙</li>
                         </ul>
                     </section>
@@ -397,8 +408,8 @@
                             <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-xl text-sm font-bold">草莓果醬</span>
                             <span class="px-4 py-2 bg-stone-100 text-stone-800 rounded-xl text-sm font-bold">荔枝果凍</span>
                         </div>
-                        <p class="text-lg text-stone-600 leading-relaxed">
-                            乾香撲鼻而來的是香甜草莓與水蜜桃香氣。口感溫潤生津，充滿桃子果凍與乳酸甜感，中後段伴隨佛手柑與橙花優雅餘韻。
+                        <p class="text-xl text-stone-600 leading-relaxed">
+                            乾香撲鼻而來的是香甜草莓與水蜜桃香氣。口感溫潤生津，充滿桃子果凍與乳酸甜感。
                         </p>
                     </section>
                 </div>
@@ -411,7 +422,7 @@
     <section id="combo" class="bg-white py-24 border-y border-stone-100">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <header class="mb-16">
-                <h2 class="product-title text-4xl md:text-5xl mb-6">春日感官・全收藏</h2>
+                <h2 class="product-title text-4xl md:text-5xl mb-6 text-[#4A3E42]">春日感官・全收藏</h2>
                 <div class="inline-block bg-white border border-rose-200 rounded-[2rem] p-10 shadow-sm max-w-4xl mx-auto text-left">
                     <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-10">
                         <div>
@@ -423,16 +434,16 @@
                             <span class="text-stone-500 font-bold">春季活動期間全台免運</span>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center border-t border-stone-100 pt-10">
-                        <div class="text-rose-600 font-bold">玫瑰 / 草莓 / 蜜桃</div>
-                        <div class="text-stone-400 font-bold">金桔 / 梅子 / 蜂蜜</div>
-                        <div class="text-rose-400 font-bold">蜜桃 / 乳酸 / 橙花</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center border-t border-stone-100 pt-10 text-xl font-bold">
+                        <div class="text-rose-600">玫瑰 / 草莓 / 蜜桃</div>
+                        <div class="text-stone-400">金桔 / 梅子 / 蜂蜜</div>
+                        <div class="text-rose-400">蜜桃 / 乳酸 / 橙花</div>
                     </div>
                 </div>
             </header>
 
             <!-- 限時加碼區 -->
-     <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto">
                 <div class="bg-pink-50/70 border-2 border-dashed border-rose-200 rounded-[3rem] p-8 md:p-16">
                     <h3 class="product-title text-2xl md:text-4xl text-rose-800 mb-6 flex items-center justify-center gap-3">
                         <i data-lucide="award" class="text-rose-500"></i> 限時加碼：【冠軍選豆・超值應援加購】
@@ -449,7 +460,7 @@
                                     <span class="text-rose-500 font-black">A. 世界冠軍 BergWu 特選</span>
                                     <span class="save-badge">現省$250</span>
                                 </div>
-                                <p class="text-stone-500 text-sm leading-relaxed">衣索比亞 古吉 日曬。飽滿草莓果醬質感，尾韻轉為優雅且清新的茉莉花芬芳。</p>
+                                <p class="text-stone-500 text-base leading-relaxed">衣索比亞 古吉 日曬。飽滿草莓果醬質感，尾韻轉為優雅且清新的茉莉花芬芳。</p>
                             </div>
                         </div>
                         <!-- 選項 B -->
@@ -459,7 +470,7 @@
                                     <span class="text-rose-500 font-black">B. 耶珈雪啡 尼羅河花園</span>
                                     <span class="save-badge">現省$200</span>
                                 </div>
-                                <p class="text-stone-500 text-sm leading-relaxed">精緻水洗。檸檬皮與水蜜桃香氣，質地通透，展現高山清泉般的極致純淨。</p>
+                                <p class="text-stone-500 text-base leading-relaxed">精緻水洗。檸檬皮與水蜜桃香氣，質地通透，展現高山清泉般的極致純淨。</p>
                             </div>
                         </div>
                         <!-- 選項 C -->
@@ -467,9 +478,9 @@
                             <div>
                                 <div class="flex items-center mb-3">
                                     <span class="text-rose-500 font-black">C. 玻利維亞 美人莊園</span>
-                                    <span class="save-badge">現省$130</span>
+                                    <span class="save-badge">現省$200</span>
                                 </div>
-                                <p class="text-stone-500 text-sm leading-relaxed">卡杜拉水洗。獨特高海拔冷涼感，黑莓與柚子風味明亮，帶有優雅紅茶感。</p>
+                                <p class="text-stone-500 text-base leading-relaxed">卡杜拉水洗。獨特高海拔冷涼感，黑莓與柚子風味明亮，帶有優雅紅茶感。</p>
                             </div>
                         </div>
                     </div>
@@ -483,9 +494,9 @@
     </section>
 
     <!-- 預訂區塊 -->
-    <section id="reserve" class="cta-gradient mx-6 my-24 p-12 md:p-24 text-center shadow-sm rounded-[4rem] relative overflow-hidden">
+    <section id="reserve" class="cta-gradient mx-6 my-24 p-12 md:p-24 text-center shadow-sm rounded-[4rem] relative overflow-hidden text-[#4A3E42]">
         <div class="relative z-10 flex flex-col items-center">
-            <h3 class="product-title text-4xl md:text-7xl mb-12 text-stone-700 tracking-tight">
+            <h3 class="product-title text-4xl md:text-7xl mb-12 tracking-tight text-white">
                 醒在香氣綻放時
             </h3>
             <div class="w-full max-w-2xl mx-auto">
@@ -498,7 +509,7 @@
                         <a href="https://lin.ee/rDBEt94" target="_blank" class="w-full inline-flex items-center justify-center gap-4 px-10 py-7 bg-[#06C755] hover:bg-[#05b34d] text-white text-2xl md:text-3xl font-black rounded-[2.5rem] transition-all shadow-md active:scale-95 group">
                             <i data-lucide="message-circle" class="w-8 h-8"></i> 加入 LINE 預訂
                         </a>
-                        <p class="text-stone-500 font-bold text-lg">告知「我要春日櫻花組合」即可訂購</p>
+                        <p class="text-stone-700 font-bold text-lg">告知「我要春日櫻花組合」即可訂購</p>
                     </div>
                 </div>
             </div>
@@ -510,7 +521,7 @@
             <div class="flex items-center justify-center gap-2 font-bold text-xl text-stone-600 mb-4">
                 <i data-lucide="coffee" class="text-rose-300"></i> ATempo Coffee
             </div>
-            <p>&copy; 2026 ATempo Coffee. 讓精品咖啡成為日常的美好風景。</p>
+            <p>&copy; 2026 ATempo Coffee. 用一杯好咖啡 找回你的生活步調</p>
         </div>
     </footer>
 
