@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATempo Coffee 2026 夏日果漾之旅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- 引用 utils.js 以執行 loadComponent -->
+    <script src="/common/js/utils.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* ─── 夏日夕陽沙灘色調 (Tropical Sunset) ─── */
+            --theme-bg: #FFFDF7;          /* 晶瑩沙灘白 */
+            --theme-primary: #FF6B6B;     /* 西瓜珊瑚紅（主色） */
+            --theme-secondary: #4ECDC4;   /* 清涼薄荷綠（強調、促銷色） */
+            --theme-accent: #FFD166;      /* 仲夏暖陽黃（點綴色） */
+            --theme-text: #2B2D42;        /* 礁石深灰藍（文字色） */
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: var(--theme-bg);
+            color: var(--theme-text);
+            scroll-behavior: smooth;
+        }
+
+        .product-title {
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: -0.01em;
+            font-weight: 900;
+            color: #E63946 !important; /* 深邃珊瑚紅 */
+        }
+
+        .tag-style {
+            padding: 4px 14px;
+            border-radius: 99px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .section-header {
+            border-left: 4px solid var(--theme-primary) !important;
+            padding-left: 12px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 107, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(230, 57, 70, 0.08);
+        }
+
+        .promo-banner {
+            /* 橫幅改為夕陽漸層：從暖陽黃到珊瑚紅 */
+            background: linear-gradient(135deg, #FFD166 0%, #FF6B6B 100%) !important;
+            color: #fff !important;
+            border: none !important;
+        }
+        
+        /* 強制覆蓋 promo-banner 內的文字顏色 */
+        .promo-banner h2, .promo-banner p {
+            color: #fff !important;
+            text-shadow: 0 2px 4px rgba(230, 57, 70, 0.3);
+        }
+        .promo-banner .bg-white\/60 {
+            background: rgba(255, 255, 255, 0.95) !important;
+            color: #E63946 !important;
+        }
+
+        .cta-gradient {
+            /* 底部 CTA 區塊改為熱情的珊瑚漸層 */
+            background: linear-gradient(to bottom right, #FF6B6B, #D90429) !important;
+        }
+
+        .badge-new {
+            background: var(--theme-secondary) !important;
+            color: #1A535C !important; /* 深色文字增加對比 */
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .price-box {
+            background: var(--theme-text) !important;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        /* 背景光暈改為夏日陽光與清涼薄荷 */
+        .sakura-dream-bg {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 209, 102, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(78, 205, 196, 0.15) 0%, transparent 50%) !important;
+        }
+
+        .vip-box {
+            background-color: rgba(255, 107, 107, 0.04) !important;
+            border: 1px solid rgba(255, 107, 107, 0.15) !important;
+        }
+
+        .save-badge {
+            background-color: var(--theme-secondary) !important;
+            color: #0B3954 !important;
+            font-size: 0.85rem;
+            padding: 2px 10px;
+            border-radius: 8px;
+            font-weight: 800;
+            margin-left: 8px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* ─── 強效覆蓋原 HTML 內嵌的 Tailwind 櫻花粉/草綠色系 ─── */
+        [class*="text-pink-400"] { color: var(--theme-primary) !important; }
+        [class*="text-pink-300"] { color: var(--theme-secondary) !important; }
+        [class*="text-rose-"] { color: var(--theme-text) !important; }
+        [class*="bg-pink-100"] { background-color: rgba(255, 209, 102, 0.25) !important; }
+        [class*="border-pink-"], [class*="border-rose-"], [class*="border-green-"] { border-color: rgba(255, 107, 107, 0.3) !important; }
+        [class*="text-stone-"] { color: #334155 !important; }
+        
+        /* 讓咖啡豆風味標籤自動轉為夏日果漾風撞色 */
+        [class*="bg-[#E87A90]"], [class*="bg-[#F497A9]"] { background-color: var(--theme-primary) !important; color: white !important; } /* 珊瑚紅 */
+        [class*="bg-[#A5435C]"], [class*="bg-[#A8D8B9]"] { background-color: var(--theme-secondary) !important; color: #114B5F !important; }   /* 薄荷綠 */
+        [class*="bg-[#8E354A]"], [class*="bg-[#88B096]"] { background-color: var(--theme-accent) !important; color: var(--theme-text) !important; } /* 陽光黃 */
+        [class*="bg-[#5D5155]"] { background-color: var(--theme-text) !important; color: white !important; } /* 灰藍 */
+    </style>
+</head>
+<body class="min-h-screen sakura-dream-bg">
+
+    <!-- 頂端列載入 -->
+    <div id="header-placeholder"></div>
+
+    <!-- 主視覺 Banner -->
+    <header class="relative bg-white py-32 overflow-hidden border-b border-pink-100">
+        <div class="absolute inset-0 opacity-40">
+             <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-pink-100 rounded-full blur-[150px]"></div>
+             <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-stone-100 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+            <span class="text-pink-400 font-bold tracking-[0.6em] uppercase mb-6 block text-sm">Summer 2026 Tropical Edition</span>
+            <h1 class="product-title text-5xl md:text-8xl mb-8 text-[#4A3E42]">夏日果漾之旅</h1>
+            <p class="text-zinc-500 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
+                把陽光、果園與微風裝進咖啡杯裡。<br>
+                精選三款來自非洲、南美洲的精品咖啡，從花果香到熱帶水果，再到醇厚巧克力，陪您展開一場夏日風味小旅行。
+            </p>
+        </div>
+    </header>
+
+    <!-- 優惠活動一：夏日豆單 -->
+    <section id="beans" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="promo-banner rounded-[3rem] p-8 md:p-12 shadow-sm mb-20 flex flex-col md:flex-row items-center justify-between gap-8 border border-white">
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-black mb-4 flex items-center justify-center md:justify-start gap-3 text-[#4A3E42]">
+                    <i data-lucide="sun" class="text-white"></i> 夏日果漾限定組
+                </h2>
+                <p class="text-rose-900/70 text-2xl font-medium">凡購買玫瑰酵母水洗，加購任1包折50，任3包折100</p>
+                <p class="text-rose-900/60 text-xl mt-2">※ 夏日活動期間任2包再享全台免運優惠！</p>
+            </div>
+            <div class="bg-white/60 backdrop-blur px-8 py-4 rounded-2xl font-black text-2xl text-rose-800">
+                2026 夏日季限量
+            </div>
+        </div>
+
+        <div class="space-y-32">
+            
+            <!-- 豆款 1：厄瓜多洛哈省波多修 -->
+            <div class="rounded-[3rem] shadow-sm overflow-hidden p-8 md:p-16 info-card">
+                <header class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="badge-new">夏日推薦</span>
+                        <span class="text-stone-400 text-xs font-bold tracking-[0.3em] uppercase">ECUADOR MEJORADO</span>
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
+                        <div>
+                            <h2 class="product-title text-4xl md:text-6xl mb-4 leading-tight text-stone-900">
+                                厄瓜多 洛哈省 波多修<br>美荷拉朵
+                            </h2>
+                            <p class="text-2xl font-light text-stone-500 mb-6 italic">
+                                Ecuador Loja Fincas Putushio - Mejorado
+                            </p>
+                            <div class="flex flex-wrap gap-3 mt-6">
+                                <span class="tag-style bg-[#E87A90]">熱帶水果</span>
+                                <span class="tag-style bg-[#A5435C]">高海拔 2200m</span>
+                                <span class="tag-style bg-[#8E354A]">多汁飽滿</span>
+                            </div>
+                        </div>
+                        <div class="price-box p-8 rounded-[2rem] shadow-lg min-w-[320px] text-right">
+                            <p class="text-white/40 line-through mb-1 text-sm">行情價: TWD 900</p>
+                            <div class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
+                                <span class="text-lg">單包活動價：</span>
+                                <span class="text-5xl font-black">439</span>
+                                <span class="text-sm">/ 半磅</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="text-xl md:text-2xl text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl md:text-3xl text-rose-800 font-bold border-l-8 border-pink-300 pl-6 py-2 italic mb-10">
+                        「傳奇美荷拉朵｜來自厄瓜多2200m高海拔的稀有甜感之作」
+                    </p>
+                    <p>
+                        厄瓜多洛哈省（Loja）產區海拔極高（常超過 2000 公尺），日夜溫差大，造就了咖啡豆緩慢生長與豐富的風味物質積累。Typica Mejorado（美荷拉朵）是在厄瓜多屢獲卓越杯（COE）佳績的知名品種。雖然名稱有「Typica」，但基因上其實是波旁（Bourbon）與衣索比亞原生種的結合。
+                    </p>
+                    <p>
+                        Mejorado 最迷人之處在於其媲美藝伎（Geisha）的豐富花香與甜感。通常帶有明亮的柑橘酸質、核果（如杏桃）、熱帶水果（如荔枝）、花香及焦糖般的甜感，風味乾淨且層次多變。
+                    </p>
+                    <p>
+                        Putushio（Fincas Del Putushio）是厄瓜多著名的精品咖啡種植計畫之一，致力於高海拔微型氣候莊園的開發，產量稀少且品質頂級。
+                    </p>
+                </div>
+
+                <div class="vip-box rounded-[2.5rem] p-10 mb-16">
+                    <h4 class="text-xl font-bold mb-8 flex items-center gap-2 text-rose-900/80 uppercase tracking-widest">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i> 適合這樣的你
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-10">
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">01</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">熱衷於追尋藝伎級風味，渴望探索高海拔微氣候下，美荷拉朵品種帶來的精緻花香與複雜變化的精品愛好者。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">02</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">喜愛鮮明「果汁感」，迷戀枇杷、鳳梨與芒果乾交織出的酸甜層次，渴望享受多汁飽滿口感的你。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">03</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">鍾情於優雅餘韻，追求杯中風味乾淨，重視嚥下後喉間散發杏桃水果茶與蜜香清甜的品鑑者。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-pink-100">
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">產區深度資訊</h3>
+                        <ul class="space-y-4 text-xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>厄瓜多 洛哈省 波多修</li>
+                            <li><span class="font-semibold text-stone-800">海拔高度：</span>2200 公尺</li>
+                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>美荷拉朵 (Mejorado)</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>日曬處理</li>
+                            <li><span class="font-semibold text-stone-800">烘焙度：</span>淺烘焙</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">感官風味筆記</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-pink-100 text-pink-800 rounded-xl text-sm font-bold">枇杷 / 鳳梨</span>
+                            <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-xl text-sm font-bold">芒果乾</span>
+                            <span class="px-4 py-2 bg-stone-100 text-stone-800 rounded-xl text-sm font-bold">杏桃蜜香</span>
+                        </div>
+                        <p class="text-xl text-stone-600 leading-relaxed">
+                            明亮的金桔醬與橙汁感，枇杷、鳳梨、芒果乾果香多汁飽滿。尾韻繚繞著杏桃水果茶與蜜香。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- 豆款 2：衣索比亞 耶加雪菲 沃卡 -->
+            <div class="rounded-[3rem] shadow-sm overflow-hidden p-8 md:p-16 info-card">
+                <header class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-stone-400 text-xs font-bold tracking-[0.3em] uppercase">ETHIOPIA WORKA G1</span>
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
+                        <div>
+                            <h2 class="product-title text-4xl md:text-6xl mb-4 leading-tight text-stone-900">
+                                衣索比亞 耶加雪菲<br>沃卡 日曬 G1
+                            </h2>
+                            <p class="text-2xl font-light text-stone-500 mb-6 italic">
+                                Ethiopia Yigacheffee Worka coop. G1
+                            </p>
+                            <div class="flex flex-wrap gap-3 mt-6">
+                                <span class="tag-style bg-[#A8D8B9]">熱帶芒果</span>
+                                <span class="tag-style bg-[#88B096]">甜橙汁</span>
+                                <span class="tag-style bg-[#5D5155]">香甜酒香</span>
+                            </div>
+                        </div>
+                        <div class="price-box p-8 rounded-[2rem] shadow-lg min-w-[320px] text-right">
+                            <p class="text-white/40 line-through mb-1 text-sm">行情價: TWD 550</p>
+                            <div class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
+                                <span class="text-lg">單包活動價：</span>
+                                <span class="text-5xl font-black">390</span>
+                                <span class="text-sm">/ 半磅</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="text-xl md:text-2xl text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl md:text-3xl text-stone-800 font-bold border-l-8 border-green-200 pl-6 py-2 italic mb-10">
+                        「耶加雪菲．沃卡村｜高海拔的果香盛宴」
+                    </p>
+                    <p>
+                        位於衣索比亞蓋德奧（Gediyo）產區的沃卡（Woka）村，坐落於全球精品咖啡愛好者熟知的潔蒂普（Gedeb）鎮。這裡被視為耶加雪菲核心產區中的精華地帶，咖啡樹生長於海拔 1,950 公尺以上的山區，更有不少農園分布在 2,200 至 2,400 公尺的高山坡地。極高海拔所帶來的大幅日夜溫差，讓咖啡果實得以緩慢成熟，累積出更豐富而細緻的甜感與香氣層次。
+                    </p>
+                    <p>
+                        本批次咖啡來自沃卡村知名的 Tibsa（塔莎）處理廠。處理廠經理曾說：「咖啡就是我的生命。」這不僅是一句口號，更展現在每個處理環節的堅持與細節控管之中。從鮮果挑選到後續處理，每一道程序都以提升品質為目標，只為忠實呈現潔蒂普高地獨有的風土魅力。
+                    </p>
+                    <p>
+                        啜飲之初，草莓與芒果般的熱帶果香率先綻放，隨後迎來甜橙汁般的明亮酸甜與迷人的可可酒香。豐富的莓果調性在杯中層層堆疊，伴隨輕熟瓜果的甜韻延伸，中段展現飽滿而多汁的果感。整體口感鮮明清爽，卻又擁有絲滑圓潤的質地，在奔放果香與優雅甜感之間取得絕佳平衡。
+                    </p>
+                    <p>
+                        這是一杯來自潔蒂普高地的風味縮影，也是沃卡村用海拔、土地與職人精神共同譜寫出的甜美篇章。
+                    </p>
+                </div>
+
+                <div class="vip-box rounded-[2.5rem] p-10 mb-16" style="background-color: rgba(168, 216, 185, 0.05); border-color: rgba(168, 216, 185, 0.2);">
+                    <h4 class="text-xl font-bold mb-8 flex items-center gap-2 text-stone-700 uppercase tracking-widest">
+                        <i data-lucide="waves" class="w-6 h-6"></i> 適合這樣的你
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-10">
+                        <div class="flex gap-4">
+                            <div class="text-stone-300 font-serif text-3xl md:text-4xl">01</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">探索經典產區風味，追求口感鮮明而清爽的品味者；喜愛中段融合莓果與甜橙的層次飽滿感，與絲滑圓潤的整體質感。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-stone-300 font-serif text-3xl md:text-4xl">02</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">迷戀可可酒香與甜橙汁風味結合的札實感，喜愛口感明確且富有個性的你。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-stone-300 font-serif text-3xl md:text-4xl">03</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">喜愛成熟水果甜韻，重視餘韻中輕熟瓜果帶來的香甜細膩，尋求口感溫潤、餘味綿長的品鑑者。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-stone-100">
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800" style="border-color: #88B096;">產區深度資訊</h3>
+                        <ul class="space-y-4 text-xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>衣索比亞 耶加雪菲 沃卡</li>
+                            <li><span class="font-semibold text-stone-800">海拔高度：</span>1800 - 2000 公尺</li>
+                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>古優原生種 (Heirloom)</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>日曬處理 (Natural)</li>
+                            <li><span class="font-semibold text-stone-800">等級標示：</span>G1 (最高等級)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800" style="border-color: #88B096;">感官風味筆記</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-green-50 text-green-700 rounded-xl text-sm font-bold">芒果草莓</span>
+                            <span class="px-4 py-2 bg-yellow-50 text-yellow-700 rounded-xl text-sm font-bold">甜橙汁</span>
+                            <span class="px-4 py-2 bg-stone-50 text-stone-700 rounded-xl text-sm font-bold">可可酒香</span>
+                        </div>
+                        <p class="text-xl text-stone-600 leading-relaxed">
+                            入口爆發草莓與芒果的熱帶風味，宛如甜橙汁般的果汁感。香甜濃郁，並帶有輕熟瓜果甜韻與可可酒香。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- 豆款 3：巴西 伊帕內瑪莊園 頂級黑系列 -->
+            <div class="rounded-[3rem] shadow-sm overflow-hidden p-8 md:p-16 info-card">
+                <header class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-stone-400 text-xs font-bold tracking-[0.3em] uppercase">BRAZIL IPANEMA BLACK</span>
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
+                        <div>
+                            <h2 class="product-title text-4xl md:text-6xl mb-4 leading-tight text-stone-900">
+                                巴西 伊帕內瑪莊園<br>頂級黑系列 水果乾
+                            </h2>
+                            <p class="text-2xl font-light text-stone-500 mb-6 italic">
+                                Brasil Ipanema Premier Cru BLACK U04 Dried Fruits
+                            </p>
+                            <div class="flex flex-wrap gap-3 mt-6">
+                                <span class="tag-style bg-[#E87A90]">牛奶巧克力</span>
+                                <span class="tag-style bg-[#F497A9]">絲滑榛果</span>
+                                <span class="tag-style bg-[#5D5155]">深邃黑李</span>
+                            </div>
+                        </div>
+                        <div class="price-box p-8 rounded-[2rem] shadow-lg min-w-[320px] text-right">
+                            <p class="text-white/40 line-through mb-1 text-sm">行情價: TWD 500</p>
+                            <div class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
+                                <span class="text-lg">單包活動價：</span>
+                                <span class="text-5xl font-black">420</span>
+                                <span class="text-sm">/ 半磅</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="text-xl md:text-2xl text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl md:text-3xl text-rose-800 font-bold border-l-8 border-rose-300 pl-6 py-2 italic mb-10">
+                        「精品工藝｜榛果巧克力的絲滑交響」
+                    </p>
+                    <p>
+                        提到巴西咖啡，多數人會想到堅果、巧克力與醇厚平衡的經典印象；但來自巴西精品咖啡指標莊園—— 伊帕內瑪莊園（Ipanema Coffee） 的 Premier Cru BLACK 系列，則展現出截然不同的細緻與深度。
+                    </p>
+                    <p>
+                        這支 Premier Cru BLACK U04 採用黃卡杜依（Yellow Catucaí）品種，並以厭氧日曬方式精緻處理。經過控制發酵與緩慢乾燥後，不僅保留巴西咖啡招牌的堅果與巧克力基調，更發展出富有層次的水果甜感，讓整體風味更加優雅細膩。
+                    </p>
+                    <p>
+                        沖煮時首先浮現的是溫暖迷人的榛果香氣，如剛烘烤完成的堅果般香甜柔和；緊接著牛奶巧克力與可可風味逐漸展開，帶來絲滑綿密的口感。中後段則能感受到黑李與深色莓果般的成熟果甜。如果說許多巴西咖啡給人的印象是厚實可靠，那麼這支黑系列的作品更像是一位穿著訂製西裝的紳士——穩重之中蘊藏細節，醇厚之中帶有優雅甜感。
+                    </p>
+                </div>
+
+                <div class="vip-box rounded-[2.5rem] p-10 mb-16">
+                    <h4 class="text-xl font-bold mb-8 flex items-center gap-2 text-rose-900/80 uppercase tracking-widest">
+                        <i data-lucide="coffee" class="w-6 h-6"></i> 適合這樣的你
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-10">
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">01</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">偏好經典厚實口感，喜愛溫暖榛果與絲滑牛奶巧克力風味的咖啡愛好者。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">02</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">尋求細緻變化，渴望在傳統醇厚中品味出黑李與深色莓果優雅甜感的品鑑家。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">03</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">重視平衡與層次，期待餘韻綿長、如絲綢般在喉間流轉的少見精品巴西代表作。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-pink-100">
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">產區深度資訊</h3>
+                        <ul class="space-y-4 text-xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>巴西 南米納斯省 Rio Verde 莊園</li>
+                            <li><span class="font-semibold text-stone-800">海拔高度：</span>1031-1057 公尺</li>
+                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>黃卡杜依 (Yellow Catucai)</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>厭氧日曬處理</li>
+                            <li><span class="font-semibold text-stone-800">烘焙度：</span>中深烘焙</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">感官風味筆記</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-pink-100 text-pink-800 rounded-xl text-sm font-bold">牛奶巧克力</span>
+                            <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-xl text-sm font-bold">絲滑榛果</span>
+                            <span class="px-4 py-2 bg-stone-100 text-stone-800 rounded-xl text-sm font-bold">黑李果乾</span>
+                        </div>
+                        <p class="text-xl text-stone-600 leading-relaxed">
+                            開場是溫潤滑順的榛果調性，隨後轉化為如奶油般綿密的牛奶巧克力口感，帶出黑李的深邃甜感。整體優柔甜美，餘韻醇厚細緻。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- 豆款 4：哥倫比亞 棕梠樹莊園 -->
+            <div class="rounded-[3rem] shadow-sm overflow-hidden p-8 md:p-16 info-card">
+                <header class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="badge-new">夏日推薦</span>
+                        <span class="text-stone-400 text-xs font-bold tracking-[0.3em] uppercase">COLOMBIA ROSE FUN</span>
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
+                        <div>
+                            <h2 class="product-title text-4xl md:text-6xl mb-4 leading-tight text-stone-900">
+                                哥倫比亞 棕梠樹莊園<br>玫瑰酵母水洗
+                            </h2>
+                            <p class="text-2xl font-light text-stone-500 italic mb-6">
+                                Colombia Huila Las Palmas - Rose Fun
+                            </p>
+                            <div class="flex flex-wrap gap-3 mt-6">
+                                <span class="tag-style bg-[#E87A90]">淺~淺中烘</span>
+                                <span class="tag-style bg-[#A5435C]">玫瑰酵母共發酵</span>
+                                <span class="tag-style bg-[#8E354A]">細緻玫瑰香氣</span>
+                            </div>
+                        </div>
+                        <div class="price-box p-8 rounded-[2rem] shadow-lg min-w-[320px] text-right">
+                            <p class="text-white/40 line-through mb-1 text-sm">行情價: TWD 850</p>
+                            <div class="text-amber-200/90 mt-4 tracking-widest uppercase font-bold flex items-baseline justify-end gap-2">
+                                <span class="text-lg">單包活動價：</span>
+                                <span class="text-5xl font-black">750</span>
+                                <span class="text-sm">/ 半磅</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="text-xl md:text-2xl text-stone-600 leading-relaxed space-y-8 mb-16">
+                    <p class="text-2xl md:text-3xl text-rose-800 font-bold border-l-8 border-pink-300 pl-6 py-2 italic mb-10">
+                        「如蜜桃玫瑰花茶般的極致享受：棕梠樹莊園 Rose Fun，帶您體驗草莓醬與蜜香堆疊的驚艷饗宴。」
+                    </p>
+                    <p>
+                        Las Palmas 莊園位於哥倫比亞南部的慧蘭（Huila）產區，這裡由 Efrén Echeverri 家族經營超過二十年。產區群山環繞，擁有富含礦物質的火山灰土壤，且日夜溫差大，結合周圍種植的遮蔭樹與多樣化農作物，創造出穩定的微氣候，讓珍貴品種能夠緩慢熟成，累積出更複雜的糖分。
+                    </p>
+                    <p>
+                        該莊園最著名的是其大膽創新的<b>共發酵（Co-fermentation）</b>技術。共發酵是指在發酵過程中，加入天然成分（如玫瑰酵母）一起作用，將鮮明的風味疊加在咖啡中，創造出單純咖啡發酵無法達到的風味層次與豐富的感官體驗。
+                    </p>
+                    <p>
+                        入口呈現極致細緻、舒服的玫瑰香氣與蜜桃甜感。乾香具有明顯的玫瑰花與草莓醬香，尾韻則轉為如玫瑰花茶般的蜜糖甜感，令人驚艷。
+                    </p>
+                </div>
+
+                <div class="vip-box rounded-[2.5rem] p-10 mb-16">
+                    <h4 class="text-xl font-bold mb-8 flex items-center gap-2 text-rose-900/80 uppercase tracking-widest">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i> 適合這樣的你
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-10">
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">01</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">熱衷探索前衛處理法，渴望體驗玫瑰酵母與咖啡豆完美共生風味的精品探索家。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">02</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">追求如「甜點」般的細緻感，喜愛草莓醬與蜜桃輕盈甜味在舌尖交織的您。</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-pink-300 font-serif text-3xl md:text-4xl">03</div>
+                            <p class="text-stone-600 leading-relaxed text-lg">鍾情於優雅花香餘韻，重視咖啡嚥下後喉間散發出玫瑰花茶與蜜糖清甜的品鑑者。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 pt-12 border-t border-pink-100">
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">產區深度資訊</h3>
+                        <ul class="space-y-4 text-xl text-stone-600">
+                            <li><span class="font-semibold text-stone-800">國家產區：</span>哥倫比亞 微拉省 棕梠樹莊園</li>
+                            <li><span class="font-semibold text-stone-800">海拔高度：</span>1700 公尺以上</li>
+                            <li><span class="font-semibold text-stone-800">咖啡品種：</span>卡杜拉 (Caturra)</li>
+                            <li><span class="font-semibold text-stone-800">處理方式：</span>特殊玫瑰酵母水洗 (Co-fermentation)</li>
+                            <li><span class="font-semibold text-stone-800">烘焙度：</span>淺烘焙 ~ 淺中烘焙</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-bold mb-8 section-header text-stone-800">感官風味筆記</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-pink-100 text-pink-800 rounded-xl text-sm font-bold">玫瑰花香</span>
+                            <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-xl text-sm font-bold">草莓果醬</span>
+                            <span class="px-4 py-2 bg-stone-100 text-stone-800 rounded-xl text-sm font-bold">蜜桃甜感</span>
+                        </div>
+                        <p class="text-xl text-stone-600 leading-relaxed">
+                            乾香具有明顯的玫瑰花與草莓醬香氣。啜吸時滿溢蜜桃甜感，尾韻則是舒服的玫瑰花茶與蜜糖餘韻，結合了優雅花香與果實鮮甜。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 優惠方案摘要 -->
+    <section id="combo" class="bg-white py-24 border-y border-stone-100">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <header class="mb-16">
+                <h2 class="product-title text-4xl md:text-5xl mb-6 text-[#4A3E42]">夏日感官・全收藏</h2>
+                <div class="inline-block bg-white border border-rose-200 rounded-[2rem] p-10 shadow-sm max-w-4xl mx-auto text-left">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-10">
+                        <div>
+                            <p class="text-rose-800 text-2xl md:text-3xl font-black mb-2 leading-snug">凡購買哥倫比亞 棕梠樹莊園 玫瑰酵母水洗</p>
+                            <p class="text-stone-500 text-xl font-bold">
+                            再加購任一包，總金額現折50，任二包現折100</p>
+                        </div>
+                        <div class="bg-stone-50 p-6 rounded-2xl flex items-center gap-4">
+                            <i data-lucide="truck" class="text-rose-400"></i>
+                            <span class="text-stone-500 font-bold">夏日活動期間任2包全台免運</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center border-t border-stone-100 pt-10 text-xl font-bold">
+                        <div class="text-rose-600">枇杷 / 鳳梨 / 蜜香</div>
+                        <div class="text-stone-400">草莓 / 芒果 / 酒香</div>
+                        <div class="text-rose-400">榛果 / 巧克力 / 黑李</div>
+                        <div class="text-pink-500">玫瑰 / 草莓 / 蜜桃</div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <!-- 預訂區塊 -->
+    <section id="reserve" class="cta-gradient mx-6 my-24 p-12 md:p-24 text-center shadow-sm rounded-[4rem] relative overflow-hidden text-[#4A3E42]">
+        <div class="relative z-10 flex flex-col items-center">
+            <h3 class="product-title text-4xl md:text-7xl mb-12 tracking-tight text-white">
+                夏日果漾之旅
+            </h3>
+            <div class="w-full max-w-2xl mx-auto">
+                <div class="flex flex-col items-center gap-10 bg-white/40 p-12 md:p-20 rounded-[3rem] border border-white/60 w-full shadow-lg backdrop-blur-md">
+                    <div class="bg-white p-5 rounded-[2.5rem] shadow-sm">
+                        <img src="https://qr-official.line.me/gs/M_495yquzy_GW.png?oat_content=qr" alt="官方 LINE QRCode" class="w-48 h-48 md:w-64 md:h-64">
+                    </div>
+                    
+                    <div class="w-full space-y-8">
+                        <a href="https://lin.ee/rDBEt94" target="_blank" class="w-full inline-flex items-center justify-center gap-4 px-10 py-7 bg-[#06C755] hover:bg-[#05b34d] text-white text-2xl md:text-3xl font-black rounded-[2.5rem] transition-all shadow-md active:scale-95 group">
+                            <i data-lucide="message-circle" class="w-8 h-8"></i> 加入 LINE 預訂
+                        </a>
+                        <p class="text-stone-700 font-bold text-lg">告知「我要夏日果漾組合」即可訂購</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-20 text-stone-400 text-sm bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-center gap-2 font-bold text-xl text-stone-600 mb-4">
+                <i data-lucide="coffee" class="text-rose-300"></i> ATempo Coffee
+            </div>
+            <p>&copy; 2026 ATempo Coffee. 用一杯好咖啡 找回你的生活步調</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.loadComponent) {
+                window.loadComponent('/common/header-component.html', 'header-placeholder');
+            }
+            setTimeout(() => {
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
