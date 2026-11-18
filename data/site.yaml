@@ -1,0 +1,40 @@
+# ============================================================
+# ATEMPO COFFEE 全站設定檔
+# 修改後執行 git commit && git push，GitHub Pages 會自動重新建置。
+# ============================================================
+
+site:
+  brand: "ATEMPO COFFEE"
+  edition: "Digital Curator Edition"
+  tagline: "找回生活本來的節奏"
+  description: "以日本「間（Ma）」的留白哲學為靈感，嚴選全球微產區精品熟豆。新鮮烘焙、單向排氣閥密封包裝，提供 7-11 賣貨便直購與官方 LINE 專人預約。"
+  siteUrl: "https://atempo-coffee.github.io"
+  copyrightYear: 2026
+
+# 首頁「最新主打活動」對應的檔案名稱（對應 data/campaigns/<slug>.yaml，不需寫 .yaml）
+featuredCampaign: "2026-11"
+
+hero:
+  badge: "Curated Specialty Coffee Roastery"
+  titleLine1: "找回生活本來的節奏"
+  subtitle: "以日本「間（Ma）」的留白哲學為靈感，精選全球微產區精品熟豆。從高海拔水洗的純粹花茶香，到奔放果酵甜韻，每杯皆是時間的溫柔雕琢。"
+
+# 訂購與客服設定
+ordering:
+  lineUrl: "https://lin.ee/rDBEt94"
+  lineQrUrl: "https://qr-official.line.me/gs/M_495yquzy_GW.png?oat_content=qr"
+  stepsTitle: "兩種方式・輕鬆品味新鮮熟豆"
+  myshipSteps:
+    - title: "進入活動總賣場"
+      detail: "點擊活動頁上的「前往 7-11 賣貨便」連結，挑選想購買的豆款與規格。"
+    - title: "店到店貨到付款"
+      detail: "選擇取貨門市並完成下單，現貨或排單烘焙後寄出，7-11 店到店取貨付款。"
+  lineSteps:
+    - title: "加入官方 LINE"
+      detail: "掃描下方 QR Code 或點擊「加入 LINE 預約訂購」。"
+    - title: "傳訊告知品項"
+      detail: "可直接點擊豆卡旁的「複製豆名規格」，貼上並告知所需包數。"
+    - title: "專人開立 7-11 賣場"
+      detail: "咖啡師為您確認庫存與烘焙排程，並回傳專屬 7-11 賣場連結。"
+    - title: "店到店・貨到付款"
+      detail: "至連結下單即可，新鮮烘焙出貨，門市取貨付款最安心。"

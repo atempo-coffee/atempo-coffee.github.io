@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e4edf7"/>
+      <stop offset="100%" stop-color="#fbf9f6"/>
+    </linearGradient>
+    <linearGradient id="hill1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#83998b"/>
+      <stop offset="100%" stop-color="#54625a"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a6f86"/>
+      <stop offset="100%" stop-color="#3e546f"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" fill="url(#sky)"/>
+  <circle cx="740" cy="145" r="64" fill="#fff8eb" fill-opacity="0.9"/>
+  <path d="M0 410 Q240 280 490 365 T960 330 V640 H0 Z" fill="url(#hill2)" fill-opacity="0.28"/>
+  <path d="M0 470 Q280 350 560 440 T960 400 V640 H0 Z" fill="url(#hill1)" fill-opacity="0.65"/>
+  <path d="M0 535 Q320 465 650 520 T960 495 V640 H0 Z" fill="#30332f" fill-opacity="0.2"/>
+  <text x="64" y="96" fill="#4a607b" font-family="sans-serif" font-size="16" font-weight="700" letter-spacing="3">GEDEO ZONE · YIRGACHEFFE · 1,900–2,100M</text>
+  <text x="64" y="142" fill="#30332f" font-family="serif" font-size="38" font-weight="700">雲霧繚繞的高海拔產區微氣候</text>
+</svg>

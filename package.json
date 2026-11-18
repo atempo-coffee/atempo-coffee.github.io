@@ -1,0 +1,20 @@
+{
+  "name": "atempo-coffee-site",
+  "version": "2.0.0",
+  "private": true,
+  "description": "ATEMPO COFFEE 精品熟豆專刊靜態網站（Komorebi 策展風格）",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/styles/main.css -o ./dist/assets/styles.css --minify",
+    "build:pages": "node ./src/build.js",
+    "build": "npm run build:pages && npm run build:css",
+    "preview": "node ./scripts/preview.js",
+    "dev": "node ./scripts/preview.js --watch"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
