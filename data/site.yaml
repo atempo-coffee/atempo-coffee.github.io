@@ -6,7 +6,7 @@
 site:
   brand: "ATEMPO COFFEE"
   edition: "Digital Curator Edition"
-  tagline: "找回生活本來的節奏"
+  tagline: "找回生活原本的節奏"
   description: "以日本「間（Ma）」的留白哲學為靈感，嚴選全球微產區精品熟豆。新鮮烘焙、單向排氣閥密封包裝，提供 7-11 賣貨便直購與官方 LINE 專人預約。"
   siteUrl: "https://atempo-coffee.github.io"
   copyrightYear: 2026
@@ -16,7 +16,7 @@ featuredCampaign: "2026-11"
 
 hero:
   badge: "Curated Specialty Coffee Roastery"
-  titleLine1: "找回生活本來的節奏"
+  titleLine1: "找回生活原本的節奏"
   subtitle: "以日本「間（Ma）」的留白哲學為靈感，精選全球微產區精品熟豆。從高海拔水洗的純粹花茶香，到奔放果酵甜韻，每杯皆是時間的溫柔雕琢。"
 
 # 訂購與客服設定
