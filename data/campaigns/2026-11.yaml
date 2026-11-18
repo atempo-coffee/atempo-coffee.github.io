@@ -71,7 +71,7 @@ beans:
     marketPrice: "500 - 600"
     variants:
       quarter:
-        price: 220
+        price: 250
       half:
         price: 430
       drip:
